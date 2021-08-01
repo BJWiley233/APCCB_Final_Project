@@ -1,0 +1,157 @@
+.container#dt_container {
+    float:left !important;
+    padding-left: 15px;
+} 
+
+table#my_datatable {
+    border: 1px solid #211a1a !important;
+    margin-right:200px;
+    margin-left:35px;
+    width:925px !important;
+    /* table-layout: fixed */
+}
+
+table#my_summarytable {
+    width:800px !important;
+}
+
+.dataTables_wrapper #my_datatable_filter.dataTables_filter input {
+    color: #757c82 !important;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #757c82;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #757c82 !important;
+    border: 1px solid #211a1a;
+}
+
+.dataTables_wrapper .table.dataTable thead th {
+    border-bottom: 1px solid #ddd;
+}
+
+table.dataTable tbody tr.odd {
+    background-color: #34383b !important;
+    color: rgb(233, 224, 224);
+    font-size: 14px;
+}
+table.dataTable tbody tr.even {
+    background-color: #26282b !important;
+    color: rgb(233, 224, 224);
+    font-size: 14px;
+}
+/* .even td {
+    border-bottom: 1px solid #211a1a;
+  }
+
+.odd td {
+    border-top: 1px solid #211a1a;
+} */
+
+table.dataTable.row-border tbody th, table.dataTable.row-border 
+tbody td, table.dataTable.display tbody th, table.dataTable.display 
+tbody td {
+    /* border-bottom: 0.5px solid #211A0F; */
+    border-top: 0.5px solid #211A0F;
+}
+
+table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+    background-color: #6267a7;
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color: #878bc5;
+}
+
+#select_container {
+    margin-left:35px;
+    margin-right:auto;
+    width:300px;
+}
+
+#search_container {
+    margin-left:35px;
+    margin-right:auto;
+    width:500px;
+}
+
+div.multiselect-container.dropdown-menu {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: rgb(194, 128, 159);
+    color: white !important
+}
+.dropdown-item.multiselect-group-option-indented:hover {
+    color: white !important
+}
+
+.multiselect-container .multiselect-option.active:not(.multiselect-active-item-fallback) {
+    background-color: rgb(194, 92, 140);
+    color: white !important;
+}
+
+button.multiselect-group.dropdown-item span.form-check label.form-check-label {
+    font-weight: bold !important
+}
+button.multiselect-group.dropdown-item:hover span.form-check label.form-check-label {
+    color: white !important;
+}
+button.multiselect-option.dropdown-item.multiselect-group-option-indented:hover span.form-check label.form-check-label {
+    color: white !important;
+}
+.multiselect-container .multiselect-group.active:not(.multiselect-active-item-fallback) {
+    background-color: rgb(194, 92, 140);;
+}
+button.multiselect-option.dropdown-item.multiselect-group-option-indented.active span.form-check label.form-check-label {
+    color: white !important;
+}
+button.multiselect-group.dropdown-item.active span.form-check label.form-check-label {
+    color: white !important;
+}
+input[type="radio"], input[type="checkbox"] {
+    /* margin:4px 0 0; */
+    margin: 4px -20px !important;
+    margin-top:1px \9;
+    line-height:normal;
+    cursor:pointer;
+}
+
+
+button.multiselect.multiselect.dropdown-toggle.custom-select {
+    width: auto !important;
+}
+
+select#prediction_tool {
+    width: 200px;
+    height: 30px !important;
+}
+
+textarea#search_entry.fld {
+    width: 500px !important;
+    height: 320px !important;
+    vertical-align: top !important;
+}
+
+label#tool {
+    width: 250px !important;
+    display: inline-block
+}
+
+label#accession {
+    width: 250px !important;
+    display: inline-block
+}
+
+.multiselect.dropdown-toggle {
+    text-align: left;
+}
+
+
+
+
+  

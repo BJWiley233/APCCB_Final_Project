@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>unit04</title>
+        
+        <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link href="css/other.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src=js/jQuery/dist/jquery.min.js></script>
+        <script src=js/datatables/media/js/jquery.dataTables.min.js></script>
+        <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+    </head>
+    <body>
+      <h1 style="padding-left:5px;">Escherichia coli Assemblies</h1>
+
+      <div class="container" id="dt_container">
+        <table style="text-align:left;" id="my_datatable" class="display">
+          <thead style="color: white">
+            <tr>
+              {% for column in column_names -%}
+              <th>{{ column }}</th>
+              {% endfor -%}
+            </tr>
+          </thead>
+          <!-- https://stackoverflow.com/questions/9198334/how-to-build-up-a-html-table-with-a-simple-for-loop-in-jinja2 -->
+          {% for assembly in assemblies -%}
+          <tr>
+            <td class="c1">{{ assembly.id }}</td>
+            <td class="c2">{{ assembly.length }}</td>
+            <td class="c3">{{ assembly.header }}</td>
+          </tr>
+          {% endfor -%}
+        </table>
+        <br></br>
+        <br></br>
+        <p></p>
+      </div>
+      <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            $('#my_datatable').DataTable( {
+              "pageLength": 20,
+              "order": []
+            });
+        } );
+      </script> 
+    </body>
+</html>

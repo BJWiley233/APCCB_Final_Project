@@ -1,0 +1,146 @@
+<!-- Content-Type: text/html -->
+
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>unit04</title>
+        
+        <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/other.css" rel="stylesheet">
+        <script src=../js/jQuery/dist/jquery.min.js></script>
+        <script src=../js/datatables/media/js/jquery.dataTables.min.js></script>
+        <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+    </head>
+    <body>
+      <h1>Python template example</h1>
+
+      <!-- this shows how to display single variables -->
+
+      <div class="container" id="dt_container">
+      <!-- <div class="container" width=400px> -->
+      <!-- This shows how to display a list of variables in a loop -->
+      <table style="text-align:left;" id="my_datatable" class="display">
+        <thead style="color: rgb(255, 255, 255)">
+          <tr>
+            <th>ID</th>
+            <th>Length</th>
+            <th>Rest of Header</th>
+            </tr>
+        </thead>
+        <!-- https://stackoverflow.com/questions/9198334/how-to-build-up-a-html-table-with-a-simple-for-loop-in-jinja2 -->
+        <tr>
+          <td class="c1">YAL069W</td>
+          <td class="c2">YAL069W</td>
+          <td class="c3">YAL069W</td>
+          <tr>
+          <td class="c1">YAL068W-A</td>
+          <td class="c2">YAL068W-A</td>
+          <td class="c3">YAL068W-A</td>
+          <tr>
+          <td class="c1">YAL068C</td>
+          <td class="c2">YAL068C</td>
+          <td class="c3">YAL068C</td>
+          <tr>
+          <td class="c1">YAL067W-A</td>
+          <td class="c2">YAL067W-A</td>
+          <td class="c3">YAL067W-A</td>
+          <tr>
+          <td class="c1">YAL067C</td>
+          <td class="c2">YAL067C</td>
+          <td class="c3">YAL067C</td>
+          <tr>
+          <td class="c1">YAL066W</td>
+          <td class="c2">YAL066W</td>
+          <td class="c3">YAL066W</td>
+          <tr>
+          <td class="c1">YAL065C</td>
+          <td class="c2">YAL065C</td>
+          <td class="c3">YAL065C</td>
+          <tr>
+          <td class="c1">YAL064W-B</td>
+          <td class="c2">YAL064W-B</td>
+          <td class="c3">YAL064W-B</td>
+          <tr>
+          <td class="c1">YAL064C-A</td>
+          <td class="c2">YAL064C-A</td>
+          <td class="c3">YAL064C-A</td>
+          <tr>
+          <td class="c1">YAL064W</td>
+          <td class="c2">YAL064W</td>
+          <td class="c3">YAL064W</td>
+          <tr>
+          <td class="c1">YAL063C-A</td>
+          <td class="c2">YAL063C-A</td>
+          <td class="c3">YAL063C-A</td>
+          <tr>
+          <td class="c1">YAL063C</td>
+          <td class="c2">YAL063C</td>
+          <td class="c3">YAL063C</td>
+          <tr>
+          <td class="c1">YAL062W</td>
+          <td class="c2">YAL062W</td>
+          <td class="c3">YAL062W</td>
+          <tr>
+          <td class="c1">YAL061W</td>
+          <td class="c2">YAL061W</td>
+          <td class="c3">YAL061W</td>
+          <tr>
+          <td class="c1">YAL060W</td>
+          <td class="c2">YAL060W</td>
+          <td class="c3">YAL060W</td>
+          <tr>
+          <td class="c1">YAL059C-A</td>
+          <td class="c2">YAL059C-A</td>
+          <td class="c3">YAL059C-A</td>
+          <tr>
+          <td class="c1">YAL059W</td>
+          <td class="c2">YAL059W</td>
+          <td class="c3">YAL059W</td>
+          <tr>
+          <td class="c1">YAL058W</td>
+          <td class="c2">YAL058W</td>
+          <td class="c3">YAL058W</td>
+          <tr>
+          <td class="c1">YAL056C-A</td>
+          <td class="c2">YAL056C-A</td>
+          <td class="c3">YAL056C-A</td>
+          <tr>
+          <td class="c1">YAL056W</td>
+          <td class="c2">YAL056W</td>
+          <td class="c3">YAL056W</td>
+          </tr>
+      </table>
+      <!-- </div> -->
+      </div>
+
+      <!-- <ul>
+        <li>YAL069W</li>
+        <li>YAL068W-A</li>
+        <li>YAL068C</li>
+        <li>YAL067W-A</li>
+        <li>YAL067C</li>
+        <li>YAL066W</li>
+        <li>YAL065C</li>
+        <li>YAL064W-B</li>
+        <li>YAL064C-A</li>
+        <li>YAL064W</li>
+        <li>YAL063C-A</li>
+        <li>YAL063C</li>
+        <li>YAL062W</li>
+        <li>YAL061W</li>
+        <li>YAL060W</li>
+        <li>YAL059C-A</li>
+        <li>YAL059W</li>
+        <li>YAL058W</li>
+        <li>YAL056C-A</li>
+        <li>YAL056W</li>
+        </ul> -->
+      <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            $('#my_datatable').DataTable();
+        } );
+      </script> 
+    </body>
+</html>

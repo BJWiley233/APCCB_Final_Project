@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>midterm</title>
+        
+        <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link href="css/other.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="js/jQuery/dist/jquery.min.js"></script>
+        <script src="js/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="js/ellipsis.plugin.js"></script>
+    </head>
+    <body>
+      <h1 style="padding-left:5px;">Protein blast to drug leads</h1>
+
+      
+      <div class="container" id="dt_container">
+        <h4 style="padding-left:25px;">Results:</h4> 
+        <br></br>
+        <table style="text-align:left;" id="my_datatable" class="display">
+          <thead style="color: white">
+            <tr>
+              {% for column in final_cols -%}
+              <th>{{ column }}</th>
+              {% endfor -%}
+            </tr>
+          </thead>
+          {% for row in final_df %}
+            <tr>
+              {% for column in final_cols %}
+                <td>{{ row[column] }}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <br></br>
+        <br></br>
+        <p></p>
+      </div>
+      <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            $('#my_datatable').DataTable( {
+              "pageLength": 20,
+              "order": [],
+              columnDefs: [ {
+                targets: [13,14],
+                render: $.fn.dataTable.render.ellipsis( 10 ),
+                responsive: true
+            } ]
+            });
+
+        } );
+      </script> 
+    </body>
+</html>
