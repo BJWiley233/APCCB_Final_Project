@@ -31,7 +31,7 @@ def main():
     fasta_io = StringIO(search_entry)
     fasta = SeqIO.parse(fasta_io, "fasta")
     fa = [record for record in fasta][0]
-    
+ 
     
     
     with tempfile.TemporaryDirectory() as tmpdirname:

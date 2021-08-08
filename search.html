@@ -29,11 +29,11 @@
     </head>
     <body>
       <h1 style="padding-left:5px;">Protein blast to drug leads</h1>
-      <div class="wrapper"> 
-        <div class="column1_1"> 
+      <!-- <div class="wrapper">  -->
+        <!-- <div class="column1_1"> 
           <div id="select_container">
             <label class="control-label" id="taxonomy" for="taxids">Select a/multiple species:</label>     
-            <select id="Organisms" multiple="multiple" name="organisms" style="height:50px;overflow-y:scroll;">
+            <select id="organisms" multiple="multiple" name="organisms" style="height:50px;overflow-y:scroll;">
               <optgroup label="Primates">
                   <option value="9606">Homo sapiens</option>
                   <option value="9598">Pan troglodytes</option>
@@ -65,14 +65,14 @@
                 <option value="210">Helicobacter pylori</option>
             </select>
           </div>
-        </div>
+        </div> -->
         <!-- <br>
         <br> -->
         <!-- <div class="column3_1">
           <input type="text" value="col3 row 1" />
         </div> -->
-        <div class="column5_2">  
-          <form class="form-inline" name='blast_id' method='post' action='http://localhost/cgi-bin/project.cgi'>
+        <!-- <div class="column5_2">  
+          <form class="form-inline" name='blast_id' method='post' action='http://localhost/cgi-bin/search6.cgi'>
             <div>
               <span style="margin-right: 30px;">Enter a UniProt(SwissProt) ID:</span>
               <span style="margin-right: 30px;">Start (optional):</span>
@@ -88,44 +88,109 @@
             <div>
               <input type="submit" value="Blast">
             </div>
-            
-
           </form>     
-        </div>
-        <div class="column3_2">
+        </div> -->
+        <!-- <div class="column3_2">
           <figure>
-            <img src="images/arrow2.png" alt="my img"/>
+            <img src="img/arrow2.png" alt="my img"/>
             <figcaption style="text-align: center;"> Or ... </figcaption>
           </figure>
-          <!-- <div>
-            <img src="images/arrow2.png">
-          </div>
-          <div></div>
-          <div>Or ...</div> -->
-        </div>
-        <div class="column1_2">
-          <div id="search_container">
-            <label class="control-label" id="peptide_entry" for="peptide_entry">Enter peptide sequence in fasta format (>):</label>
-            <form class="form-inline" name='blast_seq' method='post' action='http://localhost/cgi-bin/project.cgi'>
-              <!-- <input class="fld" id="search_entry" type="text" name="search_entry"> -->
-              <textarea name="message" rows="15" cols="60" id="search_entry" type="text" name="search_entry"></textarea>
-              <div>
+        </div> -->
+        
+        <form class="form" name='blast_seq' method='post' action='http://localhost/cgi-bin/project.cgi'>
+          <div class="wrapper">
+            <!-- column is first number for grid class and row is second -->
+            <div class="column1_1"> 
+              <div id="select_container">
+                <label class="control-label" id="taxonomy" for="taxids">Select a/multiple species:</label>     
+                <select id="organisms" multiple="multiple" name="organisms" style="height:50px;overflow-y:scroll;">
+                  <optgroup label="Primates">
+                      <option value="9606">Homo sapiens</option>
+                      <option value="9598">Pan troglodytes</option>
+                  </optgroup>
+                  <optgroup label="Other Complex Eukaryotes">
+                    <option value="9913">Bos taurus</option>
+                    <option value="7955">Danio rerio</option>
+                </optgroup>
+                  <optgroup label="Plant">
+                    <option value="3702">Arabidopsis thaliana</option>
+                    <option value="50225">Taraxacum officinale</option>
+                  </optgroup>
+                  <optgroup label="Insect">
+                    <option value="7227">Drosophila melanogaster</option>
+                    <option value="7460">Apis mellifera</option>
+                  </optgroup>
+                  <optgroup label="Rodent">
+                      <option value="10090">Mus musculus</option>
+                      <option value="10116">Rat</option>
+                      <option value="10029">Chinese Hamster</option>
+                  </optgroup>
+                  <optgroup label="Yeast">
+                    <option value="559292">Saccharomyces cerevisia</option>
+                    <option value="4896">Saccharomyces pombe</option>
+                  </optgroup>
+                  <optgroup label="Bacteria">
+                    <option value="83333">Escherichia coli</option>
+                    <option value="28901">Salmonella enterica</option>
+                    <option value="210">Helicobacter pylori</option>
+                </select>
+              </div>
+            </div>
+            <div class="column2_1">
+              <label class="control-label" id="taxonomy_manual" for="taxids">Or enter taxonomy ids in comma separeted list:</label> 
+              <input id="taxid_manual" type="text" name="taxid_manual" style="height:37px" placeholder="9606,7227,10090,559292">
+            </div>
+            <!-- column1 row 2 spreads 2 columns -->
+            <div class="column1_2">
+              <div id="search_container">
+                <label class="control-label" id="peptide_entry" for="peptide_entry">Enter peptide sequence in fasta format (>):</label>
+                <!-- <form class="form-inline" name='blast_seq' method='post' action='http://localhost/cgi-bin/project.cgi'> -->
+                  <!-- <input class="fld" id="search_entry" type="text" name="search_entry"> -->
+                <textarea rows="15" cols="60" id="fasta_entered" type="text" name="fasta_entered" target = "_blank"></textarea>
+                <div>
+                  <br>
+                  <label class="control-label" id="title" for="title">Enter a Job Title/Name for fasta:</label>
+                  <input id="job_title" type="text" name="job_title">  
+                </div>
+                <input type="submit" value="Blast">
+              </div>
+            </div>
+
+            <div class="column5_2">  
+              <!-- <form class="form-inline" name='blast_id' method='post' action='http://localhost/cgi-bin/search6.cgi'> -->
+                <div>
+                  <span style="margin-right: 30px;">Enter a UniProt(SwissProt) ID:</span>
+                  <span style="margin-right: 30px;">Start (optional):</span>
+                  <span>End (optional):</span>
+                </div>
+                <div class="your-class">
+                  <input style="display:block" id="uniprot_id" type="text" name="uniprot_id">
+                  <span><input class="resi" style="display:block" id="start_resi" type="text" name="start_resi" placeholder="1"></span>
+                  <input class="resi" style="display:block" id="end_resi" type="text" name="end_title">
+                </div>
                 <br>
-                <label class="control-label" id="title" for="title">Enter a Job Title/Name for fasta:</label>
-                <input id="job_title" type="text" name="job_title">  
-              </div>
-              </div>
-                <input type="submit" value="Blast" style="margin-left:35px;">
-              </div> 
-            </form>
-          </div>
-        </div>
-      </div>
+                <br>
+                <div>
+                  <input type="submit" value="Blast">
+                </div>
+            </div>
+
+            <div class="column3_2">
+              <figure>
+                <img src="img/arrow2.png" alt="my img"/>
+                <figcaption style="text-align: center;"> Or ... </figcaption>
+              </figure>
+            </div>
+
+          </div> <!--wrapper-->
+          
+        </form>
+
 
     </body>
     <script type="text/javascript">
       $(document).ready( function() {
-        $('#Organisms').multiselect({
+        $('#organisms').multiselect({
           enableClickableOptGroups: true,
           maxHeight: 450 
         });
