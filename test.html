@@ -1,17 +1,52 @@
 Content-Type: text/html
 
 
+ok
+
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
-        <title>midterm</title>
+        <title>Project</title>
+        <!-- <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" /> -->
+        <!-- <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script> -->
+        <!-- <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet"> -->
+        <link href="https://cdn.datatables.net/v/dt/dt-1.10.16/sl-1.2.5/datatables.min.css" rel="stylesheet">
+        <!-- <link href="https://cdn.datatables.net/s/dt/dt-1.10.10,se-1.1.0/datatables.min.css" rel="stylesheet"> -->
+        <!-- <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10,se-1.1.0/datatables.min.js"></script> -->
         
-        <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
+        
+        <!-- <link href="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.11/css/dataTables.checkboxes.css" rel="stylesheet"> -->
+        <!-- <link href="../css/other.css" rel="stylesheet"> -->
         <link href="css/other.css" rel="stylesheet">
+        <link href="css/other2.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <script src="js/jQuery/dist/jquery.min.js"></script>
-        <script src="js/datatables/media/js/jquery.dataTables.min.js"></script>
-        <script src="js/ellipsis.plugin.js"></script>
+        <!-- <link href="css/project.css" rel="stylesheet"> -->
+        
+        <link href="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        
+        <!-- <script type="text/javascript" src="../js/ellipsis.plugin.min.js"></script> -->
+    
+        <script src="http://cdn.datatables.net/1.10.25/js/jquery.js" type="text/javascript"></script>
+        <script type="text/javascript" src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.9/js/dataTables.fixedHeader.min.js"></script>
+        <script type="text/javascript" src="http://cdn.datatables.net/plug-ins/1.10.25/dataRender/ellipsis.js"></script>
+        <!-- <script type="text/javascript" src="../js/ellipsis.plugin.min.js"></script> -->
+        
+        
+        
+        <!-- <script src="../js/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/v/dt/dt-1.10.16/sl-1.2.5/datatables.min.js"></script> -->
+        <script src="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
+        
+    
+        
+ 
+ 
+
+
+        
+        
     </head>
     <body>
       <h1 style="padding-left:5px;">Protein blast to drug leads</h1>
@@ -19,1416 +54,3077 @@ Content-Type: text/html
       
       <div class="container" id="dt_container">
         <h4 style="padding-left:25px;">Results:</h4> 
-        <br></br>
-        <table style="text-align:left;" id="my_datatable" class="display">
-          <thead style="color: white">
+        <!-- <br> -->
+        <!-- <br> -->
+        <!-- <form id="frm-example" action="" method="POST"></form> -->
+        <table style="text-align:left;" id="example" class="display" cellspacing="0" width="100%">
+        <!-- <table id="example" class="display" style="width:100%"> -->
+          <thead style="color: white;">
             <tr>
-              <th>query_accver</th>
-              <th>subject_accver</th>
-              <th>%_identity</th>
-              <th>alignment_length</th>
-              <th>mismatches</th>
-              <th>gap_opens</th>
-              <th>q_start</th>
-              <th>q_end</th>
-              <th>s_start</th>
-              <th>s_end</th>
-              <th>evalue</th>
-              <th>bit_score</th>
-              <th>subject_tax_ids</th>
-              <th>query_seq</th>
-              <th>subject_seq</th>
-              <th>subject_sci_names</th>
+              <th class="dt-checkboxes-select-all sorting_disabled" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20px;" data-col="0" aria-label>
+                <input type=checkbox>
+              </th>
+              <th class="search">query_accver</th>
+              <th class="search">subject_accver</th>
+              <th class="search">%_identity</th>
+              <th class="search">alignment_length</th>
+              <th class="search">mismatches</th>
+              <th class="search">gap_opens</th>
+              <th class="search">q_start</th>
+              <th class="search">q_end</th>
+              <th class="search">s_start</th>
+              <th class="search">s_end</th>
+              <th class="search">evalue</th>
+              <th class="search">bit_score</th>
+              <th class="search">subject_tax_ids</th>
+              <th class="search">query_seq</th>
+              <th class="search">subject_seq</th>
+              <th class="search">subject_sci_names</th>
+              <th class="search">subject_com_names</th>
+              <th class="search">subject_title</th>
               </tr>
           </thead>
-          
-            <tr>
+          <tbody>
+          <tr>
               
-                <td>CXCL6_HUMAN</td>
+              <td>1</td>
               
-                <td>P80162.4</td>
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P04628.1</td>
+                
               
                 <td>100.000</td>
+                
               
-                <td>114</td>
+                <td>370</td>
+                
               
                 <td>0</td>
+                
               
                 <td>0</td>
+                
               
                 <td>1</td>
+                
               
-                <td>114</td>
+                <td>370</td>
+                
               
                 <td>1</td>
+                
               
-                <td>114</td>
+                <td>370</td>
+                
               
-                <td>4.28e-76</td>
+                <td>0.0</td>
+                
               
-                <td>221</td>
+                <td>755</td>
+                
               
                 <td>9606</td>
+                
               
-                <td>MSLPSSRAARVPGPSGSLCALLALLLLLTPPGPLASAGPVSAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSGNKKN</td>
+                <td>MGLWALLPGWVSATLLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHECL</td>
+                
               
-                <td>MSLPSSRAARVPGPSGSLCALLALLLLLTPPGPLASAGPVSAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSGNKKN</td>
+                <td>MGLWALLPGWVSATLLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHECL</td>
+                
               
-                <td>Homo sapiens
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Proto-oncogene Wnt-1; AltName: Full=Proto-oncogene Int-1 homolog; Flags: Precursor [Homo sapiens]
 </td>
-              
-            </tr>
-            
+                
+              </tr>
             <tr>
               
-                <td>CXCL6_HUMAN</td>
+              <td>2</td>
               
-                <td>P42830.1</td>
+                <td>P04628</td>
+                
               
-                <td>79.825</td>
+                <td class="row-value">P04426.1</td>
+                
               
-                <td>114</td>
+                <td>98.919</td>
+                
               
-                <td>23</td>
-              
-                <td>0</td>
-              
-                <td>1</td>
-              
-                <td>114</td>
-              
-                <td>1</td>
-              
-                <td>114</td>
-              
-                <td>2.10e-49</td>
-              
-                <td>154</td>
-              
-                <td>9606</td>
-              
-                <td>MSLPSSRAARVPGPSGSLCALLALLLLLTPPGPLASAGPVSAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSGNKKN</td>
-              
-                <td>MSLLSSRAARVPGPSSSLCALLVLLLLLTQPGPIASAGPAAAVLRELRCVCLQTTQGVHPKMISNLQVFAIGPQCSKVEVVASLKNGKEICLDPEAPFLKKVIQKILDGGNKEN</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P80221.2</td>
-              
-                <td>71.818</td>
-              
-                <td>110</td>
-              
-                <td>30</td>
-              
-                <td>1</td>
-              
-                <td>1</td>
-              
-                <td>110</td>
-              
-                <td>1</td>
-              
-                <td>109</td>
-              
-                <td>1.99e-38</td>
-              
-                <td>126</td>
-              
-                <td>9913</td>
-              
-                <td>MSLPSSRAARVPGPSGSLCALLALLLLLTPPGPLASAGPVSAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSG</td>
-              
-                <td>MRLLSSRAARVSGPSGSL-CALLALLLLTPPGPLASAGPVAAVVRELRCVCLTTTPGIHPKTVSDLQVIAAGPQCSKVEVIATLKNGREVCLDPEAPLIKKIVQKILDSG</td>
-              
-                <td>Bos taurus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P50228.2</td>
-              
-                <td>57.983</td>
-              
-                <td>119</td>
-              
-                <td>42</td>
-              
-                <td>3</td>
-              
-                <td>1</td>
-              
-                <td>113</td>
-              
-                <td>1</td>
-              
-                <td>117</td>
-              
-                <td>5.18e-35</td>
-              
-                <td>118</td>
-              
-                <td>10090</td>
-              
-                <td>MSLPSSRAARVPGPSGSLC-----ALLALLLLLTPPGPLASAGPVSAVL-TELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSGNKK</td>
-              
-                <td>MSLQLRSSARIP--SGSISPFMRMAPLAFLLLFTLPQHLAEAAPSSVIAATELRCVCLTVTPKINPKLIANLEVIPAGPQCPTVEVIAKLKNQKEVCLDPEAPVIKKIIQKILGSDKKK</td>
-              
-                <td>Mus musculus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P97885.1</td>
-              
-                <td>59.130</td>
-              
-                <td>115</td>
-              
-                <td>45</td>
-              
-                <td>2</td>
-              
-                <td>1</td>
-              
-                <td>113</td>
-              
-                <td>1</td>
-              
-                <td>115</td>
-              
-                <td>7.03e-30</td>
-              
-                <td>105</td>
-              
-                <td>10116</td>
-              
-                <td>MSLPSSRAARVPGPSGSLCALLALLLLLTPPGPLASAGPVSA-VLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQ-VCLDPEAPFLKKVIQKILDSGNKK</td>
-              
-                <td>MSFQLRSSARIPSRSCSSFTLLAFLLLFTLPQHRAQAAPFSAMVATELRCVCLTLAPRINPKMIANLEVIPAGPHCPKVEVIAKLKNQKDNVCLDPQAPLIKKVIQKILGSENKK</td>
-              
-                <td>Rattus norvegicus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P10889.2</td>
-              
-                <td>54.286</td>
-              
-                <td>70</td>
-              
-                <td>32</td>
-              
-                <td>0</td>
-              
-                <td>41</td>
-              
-                <td>110</td>
-              
-                <td>28</td>
-              
-                <td>97</td>
-              
-                <td>1.63e-21</td>
-              
-                <td>82.8</td>
-              
-                <td>10090</td>
-              
-                <td>SAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSG</td>
-              
-                <td>AVVASELRCQCLKTLPRVDFKNIQSLSVTPPGPHCAQTEVIATLKGGQKVCLDPEAPLVQKIIQKILNKG</td>
-              
-                <td>Mus musculus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P09340.1</td>
-              
-                <td>50.704</td>
-              
-                <td>71</td>
-              
-                <td>35</td>
-              
-                <td>0</td>
-              
-                <td>43</td>
-              
-                <td>113</td>
-              
-                <td>31</td>
-              
-                <td>101</td>
-              
-                <td>7.44e-21</td>
-              
-                <td>81.3</td>
-              
-                <td>10029</td>
-              
-                <td>VLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSGNKK</td>
-              
-                <td>VANELRCQCLQTMTGVHLKNIQSLKVTPPGPHCTQTEVIATLKNGQEACLNPEAPMVQKIVQKMLKSGIRK</td>
-              
-                <td>Cricetulus griseus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P12850.1</td>
-              
-                <td>49.231</td>
-              
-                <td>65</td>
-              
-                <td>33</td>
-              
-                <td>0</td>
-              
-                <td>43</td>
-              
-                <td>107</td>
-              
-                <td>27</td>
-              
-                <td>91</td>
-              
-                <td>3.60e-20</td>
-              
-                <td>79.3</td>
-              
-                <td>10090</td>
-              
-                <td>VLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKIL</td>
-              
-                <td>IANELRCQCLQTMAGIHLKNIQSLKVLPSGPHCTQTEVIATLKNGREACLDPEAPLVQKIVQKML</td>
-              
-                <td>Mus musculus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P14095.2</td>
-              
-                <td>47.945</td>
-              
-                <td>73</td>
-              
-                <td>35</td>
-              
-                <td>1</td>
-              
-                <td>35</td>
-              
-                <td>107</td>
-              
-                <td>22</td>
-              
-                <td>91</td>
-              
-                <td>4.88e-20</td>
-              
-                <td>79.0</td>
-              
-                <td>10116</td>
-              
-                <td>ASAGPVSAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKIL</td>
-              
-                <td>ATGAPVA---NELRCQCLQTVAGIHFKNIQSLKVMPPGPHCTQTEVIATLKNGREACLDPEAPMVQKIVQKML</td>
-              
-                <td>Rattus norvegicus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P30348.1</td>
-              
-                <td>51.471</td>
-              
-                <td>68</td>
-              
-                <td>33</td>
-              
-                <td>0</td>
-              
-                <td>43</td>
-              
-                <td>110</td>
-              
-                <td>30</td>
-              
-                <td>97</td>
-              
-                <td>5.86e-20</td>
-              
-                <td>79.0</td>
-              
-                <td>10116</td>
-              
-                <td>VLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSG</td>
-              
-                <td>VASELRCQCLTTLPRVDFKNIQSLTVTPPGPHCAQTEVIATLKDGHEVCLNPEAPLVQRIVQKILNKG</td>
-              
-                <td>Rattus norvegicus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P02775.3</td>
-              
-                <td>47.761</td>
-              
-                <td>67</td>
-              
-                <td>35</td>
-              
-                <td>0</td>
-              
-                <td>41</td>
-              
-                <td>107</td>
-              
-                <td>55</td>
-              
-                <td>121</td>
-              
-                <td>2.70e-19</td>
-              
-                <td>78.2</td>
-              
-                <td>9606</td>
-              
-                <td>SAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKIL</td>
-              
-                <td>SDLYAELRCMCIKTTSGIHPKNIQSLEVIGKGTHCNQVEVIATLKDGRKICLDPDAPRIKKIVQKKL</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>Q10746.2</td>
-              
-                <td>50.000</td>
-              
-                <td>70</td>
-              
-                <td>35</td>
-              
-                <td>0</td>
-              
-                <td>41</td>
-              
-                <td>110</td>
-              
-                <td>29</td>
-              
-                <td>98</td>
-              
-                <td>3.87e-19</td>
-              
-                <td>77.0</td>
-              
-                <td>10116</td>
-              
-                <td>SAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSG</td>
-              
-                <td>TVVARELRCQCLKTLPRVDFENIQSLTVTPPGPHCTQTEVIATLKDGQEVCLNPQAPRLQKIIQKLLKSD</td>
-              
-                <td>Rattus norvegicus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P09341.1</td>
-              
-                <td>47.059</td>
-              
-                <td>68</td>
-              
-                <td>36</td>
-              
-                <td>0</td>
-              
-                <td>42</td>
-              
-                <td>109</td>
-              
-                <td>36</td>
-              
-                <td>103</td>
-              
-                <td>9.37e-19</td>
-              
-                <td>76.3</td>
-              
-                <td>9606</td>
-              
-                <td>AVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDS</td>
-              
-                <td>SVATELRCQCLQTLQGIHPKNIQSVNVKSPGPHCAQTEVIATLKNGRKACLNPASPIVKKIIEKMLNS</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>Q6W5C0.1</td>
-              
-                <td>50.000</td>
-              
-                <td>70</td>
-              
-                <td>35</td>
-              
-                <td>0</td>
-              
-                <td>41</td>
-              
-                <td>110</td>
-              
-                <td>28</td>
-              
-                <td>97</td>
-              
-                <td>1.42e-18</td>
-              
-                <td>75.5</td>
-              
-                <td>10090</td>
-              
-                <td>SAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSG</td>
-              
-                <td>AVVASELRCQCLNTLPRVDFETIQSLTVTPPGPHCTQTEVIATLKDGQEVCLNPQGPRLQIIIKKILKSG</td>
-              
-                <td>Mus musculus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P19876.1</td>
-              
-                <td>47.059</td>
-              
-                <td>68</td>
-              
-                <td>36</td>
-              
-                <td>0</td>
-              
-                <td>43</td>
-              
-                <td>110</td>
-              
-                <td>37</td>
-              
-                <td>104</td>
-              
-                <td>4.06e-18</td>
-              
-                <td>74.3</td>
-              
-                <td>9606</td>
-              
-                <td>VLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSG</td>
-              
-                <td>VVTELRCQCLQTLQGIHLKNIQSVNVRSPGPHCAQTEVIATLKNGKKACLNPASPMVQKIIEKILNKG</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P02776.2</td>
-              
-                <td>45.312</td>
-              
-                <td>64</td>
-              
-                <td>35</td>
-              
-                <td>0</td>
-              
-                <td>46</td>
-              
-                <td>109</td>
-              
-                <td>38</td>
-              
-                <td>101</td>
-              
-                <td>4.32e-17</td>
-              
-                <td>71.6</td>
-              
-                <td>9606</td>
-              
-                <td>ELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDS</td>
-              
-                <td>DLQCLCVKTTSQVRPRHITSLEVIKAGPHCPTAQLIATLKNGRKICLDLQAPLYKKIIKKLLES</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P19875.1</td>
-              
-                <td>45.455</td>
-              
-                <td>66</td>
-              
-                <td>36</td>
-              
-                <td>0</td>
-              
-                <td>45</td>
-              
-                <td>110</td>
-              
-                <td>39</td>
-              
-                <td>104</td>
-              
-                <td>7.93e-17</td>
-              
-                <td>71.2</td>
-              
-                <td>9606</td>
-              
-                <td>TELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSG</td>
-              
-                <td>TELRCQCLQTLQGIHLKNIQSVKVKSPGPHCAQTEVIATLKNGQKACLNPASPMVKKIIEKMLKNG</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>O46677.1</td>
-              
-                <td>45.588</td>
-              
-                <td>68</td>
-              
-                <td>37</td>
-              
-                <td>0</td>
-              
-                <td>43</td>
-              
-                <td>110</td>
-              
-                <td>34</td>
-              
-                <td>101</td>
-              
-                <td>3.95e-16</td>
-              
-                <td>69.3</td>
-              
-                <td>9913</td>
-              
-                <td>VLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSG</td>
-              
-                <td>VVNELRCQCLQTLQGIHLKNIQSVKVTTPGPHCDQTEVIASLKTGQEVCLNPTAPMVKKIIDKMLNKA</td>
-              
-                <td>Bos taurus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>O46676.1</td>
-              
-                <td>45.588</td>
-              
-                <td>68</td>
-              
-                <td>37</td>
-              
-                <td>0</td>
-              
-                <td>43</td>
-              
-                <td>110</td>
-              
-                <td>34</td>
-              
-                <td>101</td>
-              
-                <td>4.21e-16</td>
-              
-                <td>69.3</td>
-              
-                <td>9913</td>
-              
-                <td>VLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSG</td>
-              
-                <td>VVNELRCQCLQTLQGIHLKNIQSVKVTTPGPHCDQTEVIASLKTGQEVCLNPTAPMVKKIIDKMLNKA</td>
-              
-                <td>Bos taurus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>O46675.1</td>
-              
-                <td>45.455</td>
-              
-                <td>66</td>
-              
-                <td>36</td>
-              
-                <td>0</td>
-              
-                <td>43</td>
-              
-                <td>108</td>
-              
-                <td>33</td>
-              
-                <td>98</td>
-              
-                <td>7.57e-16</td>
-              
-                <td>68.6</td>
-              
-                <td>9913</td>
-              
-                <td>VLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILD</td>
-              
-                <td>VVNELRCQCLQTLQGIHLKNIQSVKVTTPGPHCDQTEVIATLKTGQEVCLNPAAPMVKKIIDKMLN</td>
-              
-                <td>Bos taurus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P10720.1</td>
-              
-                <td>42.188</td>
-              
-                <td>64</td>
-              
-                <td>37</td>
-              
-                <td>0</td>
-              
-                <td>46</td>
-              
-                <td>109</td>
-              
-                <td>41</td>
-              
-                <td>104</td>
-              
-                <td>8.84e-15</td>
-              
-                <td>65.9</td>
-              
-                <td>9606</td>
-              
-                <td>ELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDS</td>
-              
-                <td>DLQCLCVKTTSQVRPRHITSLEVIKAGPHCPTAQLIATLKNGRKICLDLQALLYKKIIKEHLES</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>Q9Z126.1</td>
-              
-                <td>38.372</td>
-              
-                <td>86</td>
-              
-                <td>45</td>
-              
-                <td>2</td>
-              
-                <td>25</td>
-              
-                <td>109</td>
-              
-                <td>27</td>
-              
-                <td>105</td>
-              
-                <td>1.34e-13</td>
-              
-                <td>62.8</td>
-              
-                <td>10090</td>
-              
-                <td>LLLLTPPGPLASAGPVSAVLTELRCTCLR-VTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDS</td>
-              
-                <td>VVAVTSAGPEESDG-------DLSCVCVKTISSGIHLKHITSLEVIKAGRHCAVPQLIATLKNGRKICLDRQAPLYKKVIKKILES</td>
-              
-                <td>Mus musculus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P06765.1</td>
-              
-                <td>41.538</td>
-              
-                <td>65</td>
-              
-                <td>37</td>
-              
-                <td>1</td>
-              
-                <td>46</td>
-              
-                <td>109</td>
-              
-                <td>41</td>
-              
-                <td>105</td>
-              
-                <td>3.61e-13</td>
-              
-                <td>61.6</td>
-              
-                <td>10116</td>
-              
-                <td>ELRCTCLRVTL-RVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDS</td>
-              
-                <td>DLSCVCVKTSSSRIHLKRITSLEVIKAGPHCAVPQLIATLKNGSKICLDRQVPLYKKIIKKLLES</td>
-              
-                <td>Rattus norvegicus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P10145.1</td>
-              
-                <td>36.508</td>
-              
-                <td>63</td>
-              
-                <td>39</td>
-              
-                <td>1</td>
-              
-                <td>46</td>
-              
-                <td>107</td>
-              
-                <td>31</td>
-              
-                <td>93</td>
-              
-                <td>9.02e-13</td>
-              
-                <td>60.5</td>
-              
-                <td>9606</td>
-              
-                <td>ELRCTCLRVTLR-VNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKIL</td>
-              
-                <td>ELRCQCIKTYSKPFHPKFIKELRVIESGPHCANTEIIVKLSDGRELCLDPKENWVQRVVEKFL</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>Q2KIQ8.1</td>
-              
-                <td>34.737</td>
-              
-                <td>95</td>
-              
-                <td>53</td>
+                <td>370</td>
+                
               
                 <td>4</td>
-              
-                <td>21</td>
-              
-                <td>113</td>
-              
-                <td>7</td>
-              
-                <td>94</td>
-              
-                <td>1.14e-10</td>
-              
-                <td>55.1</td>
-              
-                <td>9913</td>
-              
-                <td>LLALLLLLTPPGPLASAGPVSAVLTELRCTCLRVTL-RVNPKTIGKLQVFPAGPQCSKVEVVASL-KNGKQVCLDPEAPFLKKVIQKILDSGNKK</td>
-              
-                <td>LIFCLILLT----LSQGVPLSR---NTRCSCIEISNGSVNPRSLEKLEVIPASQSCPRVEIIATMKKNGEKRCLNPESKTIKNLLKAINKQRTKR</td>
-              
-                <td>Bos taurus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P18340.2</td>
-              
-                <td>35.938</td>
-              
-                <td>64</td>
-              
-                <td>40</td>
-              
-                <td>1</td>
-              
-                <td>43</td>
-              
-                <td>105</td>
-              
-                <td>24</td>
-              
-                <td>87</td>
-              
-                <td>2.29e-10</td>
-              
-                <td>55.1</td>
-              
-                <td>10090</td>
-              
-                <td>VLTELRCTCLRVTL-RVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQK</td>
-              
-                <td>VIRNARCSCISTSRGTIHYKSLKDLKQFAPSPNCNKTEIIATLKNGDQTCLDPDSANVKKLMKE</td>
-              
-                <td>Mus musculus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P79255.1</td>
-              
-                <td>37.500</td>
-              
-                <td>64</td>
-              
-                <td>39</td>
-              
-                <td>1</td>
-              
-                <td>36</td>
-              
-                <td>98</td>
-              
-                <td>21</td>
-              
-                <td>84</td>
-              
-                <td>4.93e-10</td>
-              
-                <td>53.5</td>
-              
-                <td>9913</td>
-              
-                <td>SAGPVSAVLTELRCTCLRV-TLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPF</td>
-              
-                <td>EAAVLSRMSTELRCQCIKTHSTPFHPKFIKELRVIESGPHCENSEIIVKLTNGNEVCLNPKEKW</td>
-              
-                <td>Bos taurus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>A9QWP9.1</td>
-              
-                <td>33.333</td>
-              
-                <td>66</td>
-              
-                <td>43</td>
-              
-                <td>1</td>
-              
-                <td>48</td>
-              
-                <td>112</td>
-              
-                <td>29</td>
-              
-                <td>94</td>
-              
-                <td>5.38e-10</td>
-              
-                <td>53.9</td>
-              
-                <td>9913</td>
-              
-                <td>RCTCLRVTL-RVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSGNK</td>
-              
-                <td>RCSCINTSQGMIHPKSLKDLKQFAPSPSCEKTEIIATMKNGNEACLNPDLPEVKELIKEWEKQVNQ</td>
-              
-                <td>Bos taurus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P02778.2</td>
-              
-                <td>32.857</td>
-              
-                <td>70</td>
-              
-                <td>45</td>
-              
-                <td>2</td>
-              
-                <td>47</td>
-              
-                <td>114</td>
-              
-                <td>28</td>
-              
-                <td>97</td>
-              
-                <td>2.33e-09</td>
-              
-                <td>51.6</td>
-              
-                <td>9606</td>
-              
-                <td>LRCTCLRVTLR-VNPKTIGKLQVFPAGPQCSKVEVVASL-KNGKQVCLDPEAPFLKKVIQKILDSGNKKN</td>
-              
-                <td>VRCTCISISNQPVNPRSLEKLEIIPASQFCPRVEIIATMKKKGEKRCLNPESKAIKNLLKAVSKERSKRS</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P48973.2</td>
-              
-                <td>33.333</td>
-              
-                <td>69</td>
-              
-                <td>44</td>
-              
-                <td>2</td>
-              
-                <td>47</td>
-              
-                <td>113</td>
-              
-                <td>28</td>
-              
-                <td>96</td>
-              
-                <td>1.02e-08</td>
-              
-                <td>50.1</td>
-              
-                <td>10116</td>
-              
-                <td>LRCTCLRVTLR-VNPKTIGKLQVFPAGPQCSKVEVVASL-KNGKQVCLDPEAPFLKKVIQKILDSGNKK</td>
-              
-                <td>VRCTCIDFHEQPLRPRAIGKLEIIPASLSCPHVEIIATMKKNNEKRCLNPESEAIKSLLKAVSQRRSKR</td>
-              
-                <td>Rattus norvegicus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P02777.1</td>
-              
-                <td>38.462</td>
-              
-                <td>52</td>
-              
-                <td>32</td>
+                
               
                 <td>0</td>
+                
               
-                <td>46</td>
+                <td>1</td>
+                
               
-                <td>97</td>
+                <td>370</td>
+                
               
-                <td>22</td>
+                <td>1</td>
+                
               
-                <td>73</td>
+                <td>370</td>
+                
               
-                <td>1.76e-08</td>
+                <td>0.0</td>
+                
               
-                <td>49.3</td>
+                <td>750</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>MGLWALLPGWVSATLLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHECL</td>
+                
+              
+                <td>MGLWALLPSWVSTTLLLALTALPAALAANSSGRWWGIVNIASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHECL</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Proto-oncogene Wnt-1; AltName: Full=Proto-oncogene Int-1; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>3</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P56705.4</td>
+                
+              
+                <td>44.847</td>
+                
+              
+                <td>359</td>
+                
+              
+                <td>178</td>
+                
+              
+                <td>4</td>
+                
+              
+                <td>14</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>9</td>
+                
+              
+                <td>350</td>
+                
+              
+                <td>9.78e-105</td>
+                
+              
+                <td>313</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>TLLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGR---DLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>SLRLLVFAVFSAAASN-----WLYLAKLSSVGSISEEETCE-----KLKGLIQRQVQMCKRNLEVMDSVRRGAQLAIEECQYQFRNRRWNCSTLDSLPVFGKVVTQGTREAAFVYAISSAGVAFAVTRACSSGELEKCGCDRTVHGVSPQGFQWSGCSDNIAYGVAFSQSFVDVRERSKGASSSRALMNLHNNEAGRKAILTHMRVECKCHGVSGSCEVKTCWRAVPPFRQVGHALKEKFDGATEVEPRRVGSSRA-------LVPRNAQFKPHTDEDLVYLEPSPDFCEQDMRSGVLGTRGRTCNKTSKAIDGCELLCCGRGFHTAQVELAERCSCKFHWCCFVKCRQCQRLVELHTC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-4; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>4</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P22724.1</td>
+                
+              
+                <td>44.568</td>
+                
+              
+                <td>359</td>
+                
+              
+                <td>179</td>
+                
+              
+                <td>4</td>
+                
+              
+                <td>14</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>9</td>
+                
+              
+                <td>350</td>
+                
+              
+                <td>5.82e-104</td>
+                
+              
+                <td>311</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>TLLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGR---DLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>SLRLLVFAVFSAAASN-----WLYLAKLSSVGSISEEETCE-----KLKGLIQRQVQMCKRNLEVMDSVRRGAQLAIEECQYQFRNRRWNCSTLDSLPVFGKVVTQGTREAAFVYAISSAGVAFAVTRACSSGELEKCGCDRTVHGVSPQGFQWSGCSDNIAYGVAFSQSFVDVRERSKGASSSRALMNLHNNEAGRKAILTHMRVECKCHGVSGSCEVKTCWRAVPPFRQVGHALKEKFDGATEVEPRRVGSSRA-------LVPRNAQFKPHTDEDLVYLEPSPDFCEQDIRSGVLGTRGRTCNKTSKAIDGCELLCCGRGFHTAQVELAERCGCRFHWCCFVKCRQCQRLVEMHTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-4; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>5</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P17553.1</td>
+                
+              
+                <td>45.994</td>
+                
+              
+                <td>337</td>
+                
+              
+                <td>173</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>34</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>26</td>
+                
+              
+                <td>354</td>
+                
+              
+                <td>6.27e-104</td>
+                
+              
+                <td>311</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>WWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGP-HLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>WWSLALGQQYTSLAS-----QPLLCGSIPGLVPKQLRFCRNYIEIMPSVAEGVKLGIQECQHQFRGRRWNCTTIDDSLAIFGPVLDKATRESAFVHAIASAGVAFAVTRSCAEGTSTICGCDSHHKGPPGEGWKWGGCSEDADFGVLVSREFADARENRPDARSAMNKHNNEAGRTTILDHMHLKCKCHGLSGSCEVKTCWWAQPDFRAIGDFLKDKYDSASEMVVEK---HRESRGWVETLRAKYALFKPPTERDLVYYENSPNFCEPNPETGSFGTRDRTCNVTSHGIDGCDLLCCGRGHNTRTEKRKEKCHCVFHWCCYVSCQECIRIYDVHTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Proto-oncogene Wnt-3; AltName: Full=Proto-oncogene Int-4; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>6</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P27467.1</td>
+                
+              
+                <td>45.225</td>
+                
+              
+                <td>356</td>
+                
+              
+                <td>184</td>
+                
+              
+                <td>4</td>
+                
+              
+                <td>15</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>6</td>
+                
+              
+                <td>351</td>
+                
+              
+                <td>7.97e-104</td>
+                
+              
+                <td>311</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>LLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGP-HLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>YLLVLCSLKQALG--SYPIWWSLAVGPQYSSL-----STQPILCASIPGLVPKQLRFCRNYVEIMPSVAEGVKAGIQECQHQFRGRRWNCTTVSNSLAIFGPVLDKATRESAFVHAIASAGVAFAVTRSCAEGSAAICGCSSRLQGSPGEGWKWGGCSEDIEFGGMVSREFADARENRPDARSAMNRHNNEAGRQAIASHMHLKCKCHGLSGSCEVKTCWWSQPDFRTIGDFLKDKYDSASEMVVEK---HRESRGWVETLRPRYTYFKVPTERDLVYYEASPNFCEPNPETGSFGTRDRTCNVSSHGIDGCDLLCCGRGHNARTERRREKCHCVFHWCCYVSCQECTRVYDVHTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-3a; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>7</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9QXQ5.1</td>
+                
+              
+                <td>44.568</td>
+                
+              
+                <td>359</td>
+                
+              
+                <td>179</td>
+                
+              
+                <td>4</td>
+                
+              
+                <td>14</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>9</td>
+                
+              
+                <td>350</td>
+                
+              
+                <td>1.06e-103</td>
+                
+              
+                <td>310</td>
+                
+              
+                <td>10116</td>
+                
+              
+                <td>TLLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDL---RFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>SLRLLVFAVFSAAASN-----WLYLAKLSSVGSISEEETCE-----KLKGLIQRQVQMCKRNLEVMDSVRHGAQLAIEECQYQFRNRRWNCSTLDSLPVFGKVVTQGTREAAFVYAISSAGVAFAVTRACSSGDLEKCGCDRTVHGVSPQGFQWSGCSDNIAYGVAFSQSFVDVRERSKGASSSRALMNLHNNEAGRKAILTHMRVECKCHGVSGSCEVKTCWRAVPPFRQVGHALKEKFDGATEVEPRRVGSSRA-------LVPRNAQFKPHTDEDLVYLEPSPDFCEQDMRSGVLGTRGRTCNKTSKAIDGCELLCCGRGFHTAHVELAERCGCRFHWCCFVKCRQCQRLVEMHTC</td>
+                
+              
+                <td>Rattus norvegicus</td>
+                
+              
+                <td>Norway rat</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-4; Flags: Precursor [Rattus norvegicus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>8</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P56703.2</td>
+                
+              
+                <td>45.994</td>
+                
+              
+                <td>337</td>
+                
+              
+                <td>173</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>34</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>26</td>
+                
+              
+                <td>354</td>
+                
+              
+                <td>1.86e-103</td>
+                
+              
+                <td>310</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>WWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGP-HLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>WWSLALGQQYTSLGS-----QPLLCGSIPGLVPKQLRFCRNYIEIMPSVAEGVKLGIQECQHQFRGRRWNCTTIDDSLAIFGPVLDKATRESAFVHAIASAGVAFAVTRSCAEGTSTICGCDSHHKGPPGEGWKWGGCSEDADFGVLVSREFADARENRPDARSAMNKHNNEAGRTTILDHMHLKCKCHGLSGSCEVKTCWWAQPDFRAIGDFLKDKYDSASEMVVEK---HRESRGWVETLRAKYSLFKPPTERDLVYYENSPNFCEPNPETGSFGTRDRTCNVTSHGIDGCDLLCCGRGHNTRTEKRKEKCHCIFHWCCYVSCQECIRIYDVHTC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Proto-oncogene Wnt-3; AltName: Full=Proto-oncogene Int-4 homolog; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>9</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P56704.2</td>
+                
+              
+                <td>44.382</td>
+                
+              
+                <td>356</td>
+                
+              
+                <td>187</td>
+                
+              
+                <td>4</td>
+                
+              
+                <td>15</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>6</td>
+                
+              
+                <td>351</td>
+                
+              
+                <td>2.47e-101</td>
+                
+              
+                <td>304</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>LLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGP-HLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>YFLLLCSLKQALG--SYPIWWSLAVGPQYSSLGS-----QPILCASIPGLVPKQLRFCRNYVEIMPSVAEGIKIGIQECQHQFRGRRWNCTTVHDSLAIFGPVLDKATRESAFVHAIASAGVAFAVTRSCAEGTAAICGCSSRHQGSPGKGWKWGGCSEDIEFGGMVSREFADARENRPDARSAMNRHNNEAGRQAIASHMHLKCKCHGLSGSCEVKTCWWSQPDFRAIGDFLKDKYDSASEMVVEK---HRESRGWVETLRPRYTYFKVPTERDLVYYEASPNFCEPNPETGSFGTRDRTCNVSSHGIDGCDLLCCGRGHNARAERRREKCRCVFHWCCYVSCQECTRVYDVHTC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-3a; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>10</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P22725.2</td>
+                
+              
+                <td>39.510</td>
+                
+              
+                <td>367</td>
+                
+              
+                <td>189</td>
+                
+              
+                <td>7</td>
+                
+              
+                <td>12</td>
+                
+              
+                <td>362</td>
+                
+              
+                <td>23</td>
+                
+              
+                <td>372</td>
+                
+              
+                <td>5.20e-94</td>
+                
+              
+                <td>286</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>SATLLLALAAL----PAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEP---SLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGP-DWHWGGCSDNIDFGRLFGREFVDSGEKGR--------DLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTH</td>
+                
+              
+                <td>SKFFLMALATFFSFAQVVIEANS---WWSL----GMNNPVQMSEVYIIGAQPLCSQLAGLSQGQKKLCHLYQDHMQYIGEGAKTGIKECQYQFRHRRWNCSTVDNTSVFGRVMQIGSRETAFTYAVSAAGVVNAMSRACREGELSTCGCSRAARPKDLPRDWLWGGCGDNIDYGYRFAKEFVDARERERIHAKGSYESARILMNLHNNEAGRRTVYNLADVACKCHGVSGSCSLKTCWLQLADFRKVGDALKEKYDSAAAMRLNSRG----------KLVQVNSRFNSPTTQDLVYIDPSPDYCVRNESTGSLGTQGRLCNKTSEGMDGCELMCCGRGYDQFKTVQTERCHCKFHWCCYVKCKKCTE</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-5a; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>11</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P41221.2</td>
+                
+              
+                <td>39.510</td>
+                
+              
+                <td>367</td>
+                
+              
+                <td>189</td>
+                
+              
+                <td>7</td>
+                
+              
+                <td>12</td>
+                
+              
+                <td>362</td>
+                
+              
+                <td>23</td>
+                
+              
+                <td>372</td>
+                
+              
+                <td>7.60e-94</td>
+                
+              
+                <td>286</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>SATLLLALAAL----PAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEP---SLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGP-DWHWGGCSDNIDFGRLFGREFVDSGEKGR--------DLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTH</td>
+                
+              
+                <td>SKFFLVALAIFFSFAQVVIEANS---WWSL----GMNNPVQMSEVYIIGAQPLCSQLAGLSQGQKKLCHLYQDHMQYIGEGAKTGIKECQYQFRHRRWNCSTVDNTSVFGRVMQIGSRETAFTYAVSAAGVVNAMSRACREGELSTCGCSRAARPKDLPRDWLWGGCGDNIDYGYRFAKEFVDARERERIHAKGSYESARILMNLHNNEAGRRTVYNLADVACKCHGVSGSCSLKTCWLQLADFRKVGDALKEKYDSAAAMRLNSRG----------KLVQVNSRFNSPTTQDLVYIDPSPDYCVRNESTGSLGTQGRLCNKTSEGMDGCELMCCGRGYDQFKTVQTERCHCKFHWCCYVKCKKCTE</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-5a; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>12</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9QXQ7.2</td>
+                
+              
+                <td>39.510</td>
+                
+              
+                <td>367</td>
+                
+              
+                <td>189</td>
+                
+              
+                <td>7</td>
+                
+              
+                <td>12</td>
+                
+              
+                <td>362</td>
+                
+              
+                <td>23</td>
+                
+              
+                <td>372</td>
+                
+              
+                <td>1.55e-93</td>
+                
+              
+                <td>285</td>
+                
+              
+                <td>10116</td>
+                
+              
+                <td>SATLLLALAAL----PAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEP---SLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGP-DWHWGGCSDNIDFGRLFGREFVDSGEKGR--------DLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTH</td>
+                
+              
+                <td>SKFFLMALATFFSFAQVVIEANS---WWSL----GMNNPVQMSEVHIIGAQPLCSQLAGLSQGQKKLCHLYQDHMQYIGEGAKTGIKECQYQFRHRRWNCSTVDNTSVFGRVMQIGSRETAFTYAVSAAGVVNAMSRACREGELSTCGCSRAARPKDLPRDWLWGGCGDNIDYGYRFAKEFVDARERERIHAKGSYESARILMNLHNNEAGRRTVYNLADVACKCHGVSGSCSLKTCWLQLADFRKVGDALKEKYDSAAAMRLNSRG----------KLVQVNSRFNSPTTQDLVYIDPSPDYCVRNESTGSLGTQGRLCNKTSEGMDGCELMCCGRGYDQFKTVQTERCHCKFHWCCYVKCKKCTE</td>
+                
+              
+                <td>Rattus norvegicus</td>
+                
+              
+                <td>Norway rat</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-5a; Flags: Precursor [Rattus norvegicus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>13</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">A4D7S0.1</td>
+                
+              
+                <td>40.000</td>
+                
+              
+                <td>360</td>
+                
+              
+                <td>192</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>15</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>8</td>
+                
+              
+                <td>348</td>
+                
+              
+                <td>1.74e-93</td>
+                
+              
+                <td>285</td>
+                
               
                 <td>9913</td>
+                
               
-                <td>ELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAP</td>
+                <td>LLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPH-LFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPD---WHWGGCSDNIDFGRLFGREFVDSGE-KGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
               
-                <td>DLQCVCLKTTSGINPRHISSLEVIGAGTHCPSPQLLATKKTGRKICLDQQRP</td>
+                <td>IWLWLPLLFTWLSPEVSSSWWYMRATSGSSRVMCDN----------VPGLVSHQRQLCHRHPDVMRAIGLGVTEWTMECQHQFRQHRWNCNTLDRDHSLFGRVLLRSSRESAFVYAISSAGVVFAITRACSQGELKSCSCDPKKKGTAKDNKGTFDWGGCSDNIDYGIKFARAFVDAKERKGKDARALMNLHNNRAGRKAVKRFLKQECKCHGVSGSCTLRTCWLAMADFRKTGNYLWRKYNGAIQVVMNQDGTG---------FTVANKRFKKPTKNDLVYFENSPDYCIRDRDAGSLGTAGRVCNLTSRGMDSCEVMCCGRGYDTSHITRKTKCECKFHWCCAVRCQDCVEALDVHTC</td>
+                
               
-                <td>Bos taurus
+                <td>Bos taurus</td>
+                
+              
+                <td>cattle</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-2; Flags: Precursor [Bos taurus]
 </td>
-              
-            </tr>
-            
+                
+              </tr>
             <tr>
               
-                <td>CXCL6_HUMAN</td>
+              <td>14</td>
               
-                <td>Q07325.1</td>
+                <td>P04628</td>
+                
               
-                <td>34.375</td>
+                <td class="row-value">P09544.1</td>
+                
               
-                <td>64</td>
+                <td>41.349</td>
+                
               
-                <td>41</td>
+                <td>341</td>
+                
               
-                <td>1</td>
+                <td>176</td>
+                
               
-                <td>43</td>
+                <td>5</td>
+                
               
-                <td>105</td>
+                <td>34</td>
+                
               
-                <td>25</td>
-              
-                <td>88</td>
-              
-                <td>3.11e-08</td>
-              
-                <td>49.3</td>
-              
-                <td>9606</td>
-              
-                <td>VLTELRCTCLRVTL-RVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQK</td>
-              
-                <td>VVRKGRCSCISTNQGTIHLQSLKDLKQFAPSPSCEKIEIIATLKNGVQTCLNPDSADVKELIKK</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P17515.1</td>
-              
-                <td>33.333</td>
-              
-                <td>69</td>
-              
-                <td>44</td>
-              
-                <td>2</td>
-              
-                <td>47</td>
-              
-                <td>113</td>
-              
-                <td>28</td>
-              
-                <td>96</td>
-              
-                <td>8.75e-08</td>
-              
-                <td>47.8</td>
-              
-                <td>10090</td>
-              
-                <td>LRCTCLRVTLR-VNPKTIGKLQVFPAGPQCSKVEVVASL-KNGKQVCLDPEAPFLKKVIQKILDSGNKK</td>
-              
-                <td>VRCNCIHIDDGPVRMRAIGKLEIIPASLSCPRVEIIATMKKNDEQRCLNPESKTIKNLMKAFSQKRSKR</td>
-              
-                <td>Mus musculus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>O43927.1</td>
-              
-                <td>29.412</td>
-              
-                <td>68</td>
-              
-                <td>47</td>
-              
-                <td>1</td>
-              
-                <td>38</td>
-              
-                <td>104</td>
-              
-                <td>22</td>
-              
-                <td>89</td>
-              
-                <td>6.43e-07</td>
-              
-                <td>45.8</td>
-              
-                <td>9606</td>
-              
-                <td>GPVSAVLTELRCTCLRVTLRVNPKT-IGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQ</td>
-              
-                <td>GVLEVYYTSLRCRCVQESSVFIPRRFIDRIQILPRGNGCPRKEIIVWKKNKSIVCVDPQAEWIQRMME</td>
-              
-                <td>Homo sapiens
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>Q9WVL7.1</td>
-              
-                <td>38.983</td>
-              
-                <td>59</td>
-              
-                <td>35</td>
-              
-                <td>1</td>
-              
-                <td>46</td>
-              
-                <td>103</td>
+                <td>369</td>
+                
               
                 <td>27</td>
+                
               
-                <td>85</td>
+                <td>348</td>
+                
               
-                <td>8.65e-07</td>
+                <td>2.14e-93</td>
+                
               
-                <td>46.2</td>
-              
-                <td>10090</td>
-              
-                <td>ELRCTCLRVTLRVNP-KTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVI</td>
-              
-                <td>ELRCLCIQEHSEFIPLKLIKNIMVIFETIYCNRKEVIAVPKNGSMICLDPDAPWVKATV</td>
-              
-                <td>Mus musculus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>O55038.1</td>
-              
-                <td>34.286</td>
-              
-                <td>70</td>
-              
-                <td>45</td>
-              
-                <td>1</td>
-              
-                <td>38</td>
-              
-                <td>106</td>
-              
-                <td>21</td>
-              
-                <td>90</td>
-              
-                <td>9.30e-06</td>
-              
-                <td>42.7</td>
-              
-                <td>10090</td>
-              
-                <td>GPVSAVLTELRCTCLRV-TLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKI</td>
-              
-                <td>GILEAHYTNLKCRCSGVISTVVGLNIIDRIQVTPPGNGCPKTEVVIWTKMKKVICVNPRAKWLQRLLRHV</td>
-              
-                <td>Mus musculus
-</td>
-              
-            </tr>
-            
-            <tr>
-              
-                <td>CXCL6_HUMAN</td>
-              
-                <td>P16619.1</td>
-              
-                <td>29.333</td>
-              
-                <td>75</td>
-              
-                <td>44</td>
-              
-                <td>2</td>
-              
-                <td>32</td>
-              
-                <td>106</td>
-              
-                <td>24</td>
-              
-                <td>89</td>
-              
-                <td>6.50e-04</td>
-              
-                <td>37.4</td>
+                <td>284</td>
+                
               
                 <td>9606</td>
+                
               
-                <td>GPLASAGPVSAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKI</td>
+                <td>WWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPH-LFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPD---WHWGGCSDNIDFGRLFGREFVDSGE-KGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
               
-                <td>APLAADTPTAC--------CFSYTSRQIPQNFIA-DYFETSSQCSKPSVIFLTKRGRQVCADPSEEWVQKYVSDL</td>
+                <td>WWYMRATGGSSRVMCDN----------VPGLVSSQRQLCHRHPDVMRAISQGVAEWTAECQHQFRQHRWNCNTLDRDHSLFGRVLLRSSRESAFVYAISSAGVVFAITRACSQGEVKSCSCDPKKMGSAKDSKGIFDWGGCSDNIDYGIKFARAFVDAKERKGKDARALMNLHNNRAGRKAVKRFLKQECKCHGVSGSCTLRTCWLAMADFRKTGDYLWRKYNGAIQVVMNQDGTG---------FTVANERFKKPTKNDLVYFENSPDYCIRDREAGSLGTAGRVCNLTSRGMDSCEVMCCGRGYDTSHVTRMTKCGCKFHWCCAVRCQDCLEALDVHTC</td>
+                
               
-                <td>Homo sapiens
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-2; AltName: Full=Int-1-like protein 1; AltName: Full=Int-1-related protein; Short=IRP; Flags: Precursor [Homo sapiens]
 </td>
+                
+              </tr>
+            <tr>
               
-            </tr>
-            
+              <td>15</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P21552.2</td>
+                
+              
+                <td>40.988</td>
+                
+              
+                <td>344</td>
+                
+              
+                <td>179</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>31</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>24</td>
+                
+              
+                <td>348</td>
+                
+              
+                <td>2.29e-93</td>
+                
+              
+                <td>284</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>SGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPH-LFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPD---WHWGGCSDNIDFGRLFGREFVDSGE-KGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>SSSWWYMRATGGSSRVMCDN----------VPGLVSRQRQLCHRHPDVMRAIGLGVAEWTAECQHQFRQHRWNCNTLDRDHSLFGRVLLRSSRESAFVYAISSAGVVFAITRACSQGELKSCSCDPKKKGSAKDSKGTFDWGGCSDNIDYGIKFARAFVDAKERKGKDARALMNLHNNRAGRKAVKRFLKQECKCHGVSGSCTLRTCWLAMADFRKTGDYLWRKYNGAIQVVMNQDGTG---------FTVANKRFKKPTKNDLVYFENSPDYCIRDREAGSLGTAGRVCNLTSRGMDSCEVMCCGRGYDTSHVTRMTKCECKFHWCCAVRCQDCLEALDVHTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-2; AltName: Full=INT-1-related protein; Short=IRP; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>16</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q2QLE7.1</td>
+                
+              
+                <td>41.642</td>
+                
+              
+                <td>341</td>
+                
+              
+                <td>175</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>34</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>27</td>
+                
+              
+                <td>348</td>
+                
+              
+                <td>2.49e-93</td>
+                
+              
+                <td>284</td>
+                
+              
+                <td>9598</td>
+                
+              
+                <td>WWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPH-LFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPD---WHWGGCSDNIDFGRLFGREFVDSGE-KGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>WWYMRATGGSSRVMCDN----------VPGLVSSQRQLCHRHPDVMRAISQGVAEWTAECQHQFRQHRWNCNTLDRDHSLFGRVLLRSSRESAFVYAISSAGVVFAITRACSQGEVKSCSCDPKKMGSAKDSKGIFDWGGCSDNIDYGIKFARAFVDAKERKGKDARALMNLHNNRAGRKAVKRFLKQECKCHGVSGSCTLRTCWLAMADFRKTGDYLWRKYNGAIQVVMNQDGTGFTVANERF---------KKPTKNDLVYFENSPDYCIRDREAGSLGTAGRVCNLTSRGMDSCEVMCCGRGYDTSHVTRMTKCGCKFHWCCAVRCQDCLEALDVHTC</td>
+                
+              
+                <td>Pan troglodytes</td>
+                
+              
+                <td>chimpanzee</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-2; Flags: Precursor [Pan troglodytes]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>17</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P09615.1</td>
+                
+              
+                <td>53.559</td>
+                
+              
+                <td>295</td>
+                
+              
+                <td>101</td>
+                
+              
+                <td>9</td>
+                
+              
+                <td>10</td>
+                
+              
+                <td>279</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>288</td>
+                
+              
+                <td>8.83e-93</td>
+                
+              
+                <td>286</td>
+                
+              
+                <td>7227</td>
+                
+              
+                <td>WVSATLLLAL----AALPAALAANSSGR-----WWGIVNVASSTNLLTDSKSLQLVLEPSLQ-LLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPT---APGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDY--RRRGP----------GGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDP</td>
+                
+              
+                <td>YIFVICLMALCSGGSSLSQVEGKQKSGRGRGSMWWGIAKVGEPNNI-----TPIMYMDPAIHSTLRRKQRRLVRDNPGVLGALVKGANLAISECQHQFRNRRWNCSTRNFSRGKNLFGKIVDRGCRETSFIYAITSAAVTHSIARACSEGTIESCTCDYSHQSRSPQANHQAGSVAGVRDWEWGGCSDNIGFGFKFSREFVDTGERGRNLREKMNLHNNEAGRAHVQAEMRQECKCHGMSGSCTVKTCWMRLANFRVIGDNLKARFDGATRVQVTN--SLRATNA----LAPVSP</td>
+                
+              
+                <td>Drosophila melanogaster</td>
+                
+              
+                <td>fruit fly</td>
+                
+              
+                <td>RecName: Full=Protein wingless; AltName: Full=Protein Wnt-1; AltName: Full=Protein int-1; AltName: Full=dInt-1; AltName: Full=dWnt-1; Flags: Precursor [Drosophila melanogaster]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>18</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P09615.1</td>
+                
+              
+                <td>52.525</td>
+                
+              
+                <td>99</td>
+                
+              
+                <td>47</td>
+                
+              
+                <td>0</td>
+                
+              
+                <td>272</td>
+                
+              
+                <td>370</td>
+                
+              
+                <td>370</td>
+                
+              
+                <td>468</td>
+                
+              
+                <td>3.98e-29</td>
+                
+              
+                <td>118</td>
+                
+              
+                <td>7227</td>
+                
+              
+                <td>LRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHECL</td>
+                
+              
+                <td>FQLNPHNPEHKPPGSKDLVYLEPSPSFCEKNLRQGILGTHGRQCNETSLGVDGCGLMCCGRGYRRDEVVVVERCACTFHWCCEVKCKLCRTKKVIYTCL</td>
+                
+              
+                <td>Drosophila melanogaster</td>
+                
+              
+                <td>fruit fly</td>
+                
+              
+                <td>RecName: Full=Protein wingless; AltName: Full=Protein Wnt-1; AltName: Full=Protein int-1; AltName: Full=dInt-1; AltName: Full=dWnt-1; Flags: Precursor [Drosophila melanogaster]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>19</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q93097.2</td>
+                
+              
+                <td>45.312</td>
+                
+              
+                <td>320</td>
+                
+              
+                <td>159</td>
+                
+              
+                <td>6</td>
+                
+              
+                <td>56</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>70</td>
+                
+              
+                <td>379</td>
+                
+              
+                <td>1.16e-91</td>
+                
+              
+                <td>281</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>VLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPH-LFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRG---PGGPDWHWGGCSDNIDFGRLFGREFVDSGEKG-RDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHR-TRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>VICDNIPGLVSRQRQLCQRYPDIMRSVGEGAREWIRECQHQFRHHRWNCTTLDRDHTVFGRVMLRSSREAAFVYAISSAGVVHAITRACSQGELSVCSCDPYTRGRHHDQRGDFDWGGCSDNIHYGVRFAKAFVDAKEKRLKDARALMNLHNNRCGRTAVRRFLKLECKCHGVSGSCTLRTCWRALSDFRRTGDYLRRRYDGAVQVMATQDGAN---------FTAARQGYRRATRTDLVYFDNSPDYCVLDKAAGSLGTAGRVCSKTSKGTDGCEIMCCGRGYDTTRVTRVTQ-CECKFHWCCAVRCKECRNTVDVHTC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-2b; AltName: Full=Protein Wnt-13; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>20</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">O70283.3</td>
+                
+              
+                <td>45.312</td>
+                
+              
+                <td>320</td>
+                
+              
+                <td>159</td>
+                
+              
+                <td>6</td>
+                
+              
+                <td>56</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>68</td>
+                
+              
+                <td>377</td>
+                
+              
+                <td>2.00e-90</td>
+                
+              
+                <td>278</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>VLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPH-LFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGP---DWHWGGCSDNIDFGRLFGREFVDSGEKG-RDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHR-TRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>VICDNIPGLVSRQRQLCQRYPDIMRSVGEGAREWIRECQHQFRHHRWNCTTLDRDHTVFGRAMLRSSREAAFVYAISSAGVVHAITRACSQGELSVCSCDPYTRGRHHDQRGDFDWGGCSDNIHYGVRFAKAFVDAKEKRLKDARALMNLHNNRCGRTAVRRFLKLECKCHGVSGSCTLRTCWRALSDFRRTGDYLRRRYDGAVQVTATQDGAN---------FTAARQGYRHATRTDLVYFDNSPDYCVLDKAAGSLGTAGRVCSKTSKGTDGCEIMCCGRGYDTTRVTRVTQ-CECKFHWCCAVRCKECRNTVDVHTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-2b; AltName: Full=Protein Wnt-13; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>21</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P22727.2</td>
+                
+              
+                <td>42.623</td>
+                
+              
+                <td>366</td>
+                
+              
+                <td>167</td>
+                
+              
+                <td>8</td>
+                
+              
+                <td>28</td>
+                
+              
+                <td>370</td>
+                
+              
+                <td>19</td>
+                
+              
+                <td>364</td>
+                
+              
+                <td>1.17e-88</td>
+                
+              
+                <td>272</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>ANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRR-RGPGGPD--------------------WHWGGCSDNIDFGRLFGREFVDSGEK-GR-DLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHECL</td>
+                
+              
+                <td>AHVDGLWWAV-----GSPLVMDPTSICR----KARRLAGRQAELCQAEPEVVAELARGARLGVRECQFQFRFRRWNCSSHS--KAFGRVLQQDIRETAFVFAITAAGASHAVTQACSMGELLQCGCQAPRGRAPPRPSGLLGTPGPPGPTGSPDASAAWEWGGCGDDVDFGDEKSRLFMDAQHKRGRGDIRALVQLHNNEAGRLAVRSHTRTECKCHGLSGSCALRTCWQKLPPFREVGARLLERFHGASRVMGTNDGKA---------LLPAVRTLKPPGRADLLYAADSPDFCAPNRRTGSPGTRGRACNSSAPDLSGCDLLCCGRGHRQESVQLEENCLCRFHWCCVVQCHRCRVRKELSLCL</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-6; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>22</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9H1J7.2</td>
+                
+              
+                <td>41.270</td>
+                
+              
+                <td>315</td>
+                
+              
+                <td>166</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>54</td>
+                
+              
+                <td>358</td>
+                
+              
+                <td>3.77e-88</td>
+                
+              
+                <td>271</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGP-DWHWGGCSDNIDFGRLFGREFVDSGEKGRDL--------RFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LSPGQRKLCQLYQEHMAYIGEGAKTGIKECQHQFRQRRWNCSTADNASVFGRVMQIGSRETAFTHAVSAAGVVNAISRACREGELSTCGCSRTARPKDLPRDWLWGGCGDNVEYGYRFAKEFVDAREREKNFAKGSEEQGRVLMNLQNNEAGRRAVYKMADVACKCHGVSGSCSLKTCWLQLAEFRKVGDRLKEKYDSAAAMRVTRKG----------RLELVNSRFTQPTPEDLVYVDPSPDYCLRNESTGSLGTQGRLCNKTSEGMDGCELMCCGRGYNQFKSVQVERCHCKFHWCCFVRCKKCTEIVDQYIC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-5b; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>23</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P24383.2</td>
+                
+              
+                <td>42.208</td>
+                
+              
+                <td>308</td>
+                
+              
+                <td>173</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>44</td>
+                
+              
+                <td>348</td>
+                
+              
+                <td>4.36e-88</td>
+                
+              
+                <td>270</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPD--WHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LAPRQRAICQSRPDAIIVIGEGSQMGLDECQFQFRNGRWNCSALGERTVFGKELKVGSREAAFTYAIIAAGVAHAITAACTQGNLSDCGCDKEKQGQYHRDEGWKWGGCSADIRYGIGFAKVFVDAREIKQNARTLMNLHNNEAGRKILEENMKLECKCHGVSGSCTTKTCWTTLPQFRELGYVLKDKYNEAVHVEPVR--ASRNKRPTFLKIK-KPLSYRKPMDTDLVYIEKSPNYCEEDPVTGSVGTQGRACNKTAPQASGCDLMCCGRGYNTHQYARVWQCNCKFHWCCYVKCNTCSERTEMYTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-7a; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>24</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">O00755.2</td>
+                
+              
+                <td>42.208</td>
+                
+              
+                <td>308</td>
+                
+              
+                <td>173</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>44</td>
+                
+              
+                <td>348</td>
+                
+              
+                <td>4.36e-88</td>
+                
+              
+                <td>270</td>
+                
+              
+                <td>9598;9606</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPD--WHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LAPRQRAICQSRPDAIIVIGEGSQMGLDECQFQFRNGRWNCSALGERTVFGKELKVGSREAAFTYAIIAAGVAHAITAACTQGNLSDCGCDKEKQGQYHRDEGWKWGGCSADIRYGIGFAKVFVDAREIKQNARTLMNLHNNEAGRKILEENMKLECKCHGVSGSCTTKTCWTTLPQFRELGYVLKDKYNEAVHVEPVR--ASRNKRPTFLKIK-KPLSYRKPMDTDLVYIEKSPNYCEEDPVTGSVGTQGRACNKTAPQASGCDLMCCGRGYNTHQYARVWQCNCKFHWCCYVKCNTCSERTEMYTC</td>
+                
+              
+                <td>Pan troglodytes;Homo sapiens</td>
+                
+              
+                <td>chimpanzee;human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-7a; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>25</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P22726.2</td>
+                
+              
+                <td>40.952</td>
+                
+              
+                <td>315</td>
+                
+              
+                <td>167</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>54</td>
+                
+              
+                <td>358</td>
+                
+              
+                <td>9.36e-88</td>
+                
+              
+                <td>270</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGP-DWHWGGCSDNIDFGRLFGREFVDSGEKGRDL--------RFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LSPGQRKLCQLYQEHMSYIGEGAKTGIRECQHQFRQRRWNCSTVDNTSVFGRVMQIGSRETAFTYAVSAAGVVNAISRACREGELSTCGCSRAARPKDLPRDWLWGGCGDNVEYGYRFAKEFVDAREREKNFAKGSEEQGRALMNLQNNEAGRRAVYKMADVACKCHGVSGSCSLKTCWLQLAEFRKVGDRLKEKYDSAAAMRITRQG----------KLELANSRFNQPTPEDLVYVDPSPDYCLRNETTGSLGTQGRLCNKTSEGMDGCELMCCGRGYDRFKSVQVERCHCRFHWCCFVRCKKCTEVVDQYVC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-5b; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>26</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9Y6F9.2</td>
+                
+              
+                <td>42.896</td>
+                
+              
+                <td>366</td>
+                
+              
+                <td>166</td>
+                
+              
+                <td>8</td>
+                
+              
+                <td>28</td>
+                
+              
+                <td>370</td>
+                
+              
+                <td>20</td>
+                
+              
+                <td>365</td>
+                
+              
+                <td>1.28e-87</td>
+                
+              
+                <td>270</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>ANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRR-RGP--------------------GGPDWHWGGCSDNIDFGRLFGREFVDSGEK-GR-DLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHECL</td>
+                
+              
+                <td>AHVGGLWWAV-----GSPLVMDPTSICR----KARRLAGRQAELCQAEPEVVAELARGARLGVRECQFQFRFRRWNCSSHS--KAFGRILQQDIRETAFVFAITAAGASHAVTQACSMGELLQCGCQAPRGRAPPRPSGLPGTPGPPGPAGSPEGSAAWEWGGCGDDVDFGDEKSRLFMDARHKRGRGDIRALVQLHNNEAGRLAVRSHTRTECKCHGLSGSCALRTCWQKLPPFREVGARLLERFHGASRVMGTNDGKA---------LLPAVRTLKPPGRADLLYAADSPDFCAPNRRTGSPGTRGRACNSSAPDLSGCDLLCCGRGHRQESVQLEENCLCRFHWCCVVQCHRCRVRKELSLCL</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-6; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>27</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P56706.2</td>
+                
+              
+                <td>41.883</td>
+                
+              
+                <td>308</td>
+                
+              
+                <td>174</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>44</td>
+                
+              
+                <td>348</td>
+                
+              
+                <td>1.40e-87</td>
+                
+              
+                <td>269</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRG--PGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LAPRQRAICQSRPDAIIVIGEGAQMGINECQYQFRFGRWNCSALGEKTVFGQELRVGSREAAFTYAITAAGVAHAVTAACSQGNLSNCGCDREKQGYYNQAEGWKWGGCSADVRYGIDFSRRFVDAREIKKNARRLMNLHNNEAGRKVLEDRMQLECKCHGVSGSCTTKTCWTTLPKFREVGHLLKEKYNAAVQVEVVR--ASRLRQPTFLRIK-QLRSYQKPMETDLVYIEKSPNYCEEDAATGSVGTQGRLCNRTSPGADGCDTMCCGRGYNTHQYTKVWQCNCKFHWCCFVKCNTCSERTEVFTC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-7b; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>28</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P28047.1</td>
+                
+              
+                <td>41.883</td>
+                
+              
+                <td>308</td>
+                
+              
+                <td>174</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>44</td>
+                
+              
+                <td>348</td>
+                
+              
+                <td>1.29e-86</td>
+                
+              
+                <td>266</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRG--PGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LAPRQRAICQSRPDAIIVIGEGAQMGIDECQHQFRFGRWNCSALGEKTVFGQELRVGSREAAFTYAITAAGVAHAVTAACSQGNLSNCGCDREKQGYYNQAEGWKWGGCSADVRYGIDFSRRFVDAREIKKNARRLMNLHNNEAGRKVLEDRMKLECKCHGVSGSCTTKTCWTTLPKFREVGHLLKEKYNAAVQVEVVR--ASRLRQPTFLRIK-QLRSYQKPMETDLVYIEKSPNYCEEDAATGSVGTQGRLCNRTSPGADGCDTMCCGRGYNTHQYTKVWQCNCKFHWCCFVKCNTCSERTEVFTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-7b; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>29</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9QYS1.2</td>
+                
+              
+                <td>41.875</td>
+                
+              
+                <td>320</td>
+                
+              
+                <td>164</td>
+                
+              
+                <td>6</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>52</td>
+                
+              
+                <td>363</td>
+                
+              
+                <td>1.84e-86</td>
+                
+              
+                <td>267</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPH-------LFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPD--WHWGGCSDNIDFGRLFGREFVD---SGEKGRDLRFL--MNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LNSRQKELCKRKPYLLPSIREGARLGIQECRSQFRHERWNCMVATTTSTQLATAPLFGYELSSGTKETAFIYAIMAAGLVHSVTRSCSAGNMTECSCDTTLQNGGSPSEGWHWGGCSDDVQYGMWFSRKFLDLPIRNTTGKESRVLLAMNLHNNEAGRQAVAKLMSVDCRCHGVSGSCAVKTCWKTMSSFEKIGHFLKDKYENSIQI------SDKTKRK--MRRREKDQRQTPILKDDLLYVHKSPNYCVENKKLGIPGTQGRECNRTSGGADGCNLLCCGRGYNTHVVRHVERCECKFIWCCYVRCRRCESMTDVHTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-16; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>30</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q5E9U6.1</td>
+                
+              
+                <td>41.195</td>
+                
+              
+                <td>318</td>
+                
+              
+                <td>167</td>
+                
+              
+                <td>6</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>52</td>
+                
+              
+                <td>361</td>
+                
+              
+                <td>1.35e-85</td>
+                
+              
+                <td>265</td>
+                
+              
+                <td>9913</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNC----PTAPGPH-LFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCD--YRRRGPGGPDWHWGGCSDNIDFGRLFGREFVD-----SGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LNSRQKELCKRKPYLLPSIREGARLGIQECRSQFRHERWNCLVAAASAPGTSPLFGYELSSGTKETAFIYAVMAAGLVHSVTRSCSAGNMTECSCDTTLQNGGSSSEGWHWGGCSDDVQYGMWFSRKFLDFPIKNTTAKESKVLLAMNLHNNEAGRQAVAKLMSLDCRCHGVSGSCAVKTCWKTMSSFEKIGHLLKDKYENSVQI------SDKIKRK--MHRREKDQRKIPIRKDDLLYVNKSPNYCVEDKKLGIPGTQGRECNRTSEGADGCNLLCCGRGYNTHVVRHVERCECKFIWCCYVRCRRCESMTDVHTC</td>
+                
+              
+                <td>Bos taurus</td>
+                
+              
+                <td>cattle</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-16; Flags: Precursor [Bos taurus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>31</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9UBV4.1</td>
+                
+              
+                <td>41.433</td>
+                
+              
+                <td>321</td>
+                
+              
+                <td>165</td>
+                
+              
+                <td>7</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>52</td>
+                
+              
+                <td>364</td>
+                
+              
+                <td>4.04e-85</td>
+                
+              
+                <td>263</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNC------PTAP--GPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCD--YRRRGPGGPDWHWGGCSDNIDFGRLFGREFVD---SGEKGRDLRFL--MNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LNSRQKELCKRKPYLLPSIREGARLGIQECGSQFRHERWNCMITAAATTAPMGASPLFGYELSSGTKETAFIYAVMAAGLVHSVTRSCSAGNMTECSCDTTLQNGGSASEGWHWGGCSDDVQYGMWFSRKFLDFPIGNTTGKENKVLLAMNLHNNEAGRQAVAKLMSVDCRCHGVSGSCAVKTCWKTMSSFEKIGHLLKDKYENSIQI------SDKTKRK--MRRREKDQRKIPIHKDDLLYVNKSPNYCVEDKKLGIPGTQGRECNRTSEGADGCNLLCCGRGYNTHVVRHVERCECKFIWCCYVRCRRCESMTDVHTC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-16; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>32</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P48614.1</td>
+                
+              
+                <td>40.857</td>
+                
+              
+                <td>350</td>
+                
+              
+                <td>156</td>
+                
+              
+                <td>7</td>
+                
+              
+                <td>60</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>50</td>
+                
+              
+                <td>388</td>
+                
+              
+                <td>3.88e-77</td>
+                
+              
+                <td>244</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>SLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPG----PHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRG-----------------------------------PGGPD-WHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>TLSGLSKRQLGLCLRSPDVTASALQGLHIAVHECQHQLRDQRWNCSALEGGGRLPH-HSAILKRGFRESAFSFSMLAAGVMHAVATACSLGKLVSCGCGWKGSGEQDRLRAKLLQLQALSRGKTFPISQPSPVPGSVPSPGPQDTWEWGGCNHDMDFGEKFSRDFLDSREAPRDIQARMRIHNNRVGRQVVTENLKRKCKCHGTSGSCQFKTCWRAAPEFRAIGAALRERL---SRAIFID-THNRNSGAFQPRLRPRRLS------GELVYFEKSPDFCERDPTLGSPGTRGRACNKTSRLLDGCGSLCCGRGHNVLRQTRVERCHCRFHWCCYVLCDECKVTEWVNVC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-10b; AltName: Full=Protein Wnt-12; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>33</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">O00744.2</td>
+                
+              
+                <td>40.571</td>
+                
+              
+                <td>350</td>
+                
+              
+                <td>157</td>
+                
+              
+                <td>6</td>
+                
+              
+                <td>60</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>50</td>
+                
+              
+                <td>388</td>
+                
+              
+                <td>2.58e-76</td>
+                
+              
+                <td>241</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>SLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPG----PHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYR------------------RRGPGGPD------------------WHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>TLSGLSKRQLGLCLRNPDVTASALQGLHIAVHECQHQLRDQRWNCSALEGGGRLPH-HSAILKRGFRESAFSFSMLAAGVMHAVATACSLGKLVSCGCGWKGSGEQDRLRAKLLQLQALSRGKSFPHSLPSPGPGSSPSPGPQDTWEWGGCNHDMDFGEKFSRDFLDSREAPRDIQARMRIHNNRVGRQVVTENLKRKCKCHGTSGSCQFKTCWRAAPEFRAVGAALRERLGRAIFIDTHNRNSG----AFQPRLRPRRLS------GELVYFEKSPDFCERDPTMGSPGTRGRACNKTSRLLDGCGSLCCGRGHNVLRQTRVERCHCRFHWCCYVLCDECKVTEWVNVC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-10b; AltName: Full=Protein Wnt-12; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>34</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9H1J5.2</td>
+                
+              
+                <td>42.424</td>
+                
+              
+                <td>297</td>
+                
+              
+                <td>161</td>
+                
+              
+                <td>4</td>
+                
+              
+                <td>81</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>42</td>
+                
+              
+                <td>336</td>
+                
+              
+                <td>1.23e-74</td>
+                
+              
+                <td>236</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>SVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGP-GGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRAC-----NSSSPALDGCELLC--CGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>SVALGAQSGIEECKFQFAWERWNCPENALQLSTHNRLRSATRETSFIHAISSAGVMYIITKNCSMGDFENCGCDGSNNGKTGGHGWIWGGCSDNVEFGERISKLFVDSLEKGKDARALMNLHNNRAGRLAVRATMKRTCKCHGISGSCSIQTCWLQLAEFREMGDYLKAKYDQALKIEMDKRQLRAGNSAEGHWVPAE--AFLPSAEAELIFLEESPDYCTCNSSLGIYGTEGRECLQNSHNTSRWERRSCGRLCTECGLQVEERKTEVISSCNCKFQWCCTVKCDQCRHVVSKYYC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-8a; AltName: Full=Protein Wnt-8d; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>35</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P70701.1</td>
+                
+              
+                <td>38.642</td>
+                
+              
+                <td>383</td>
+                
+              
+                <td>166</td>
+                
+              
+                <td>6</td>
+                
+              
+                <td>48</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>42</td>
+                
+              
+                <td>416</td>
+                
+              
+                <td>2.00e-74</td>
+                
+              
+                <td>238</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>TDSKSLQLVLEPSLQL---------LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLF---GKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRG-------------------------------------PGGPD-WHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSP-----------HDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>NDILGLRLPPEPVLNANTVCLTLPGLSRRQMEVCVRHPDVAASAIQGIQIAIHECQHQFRDQRWNCSSLETRNKVPYESPIFSRGFRESAFAYAIAAAGVVHAVSNACALGKLKACGCDASRRGDEEAFRRKLHRLQLDALQRGKGLSHGVPEHPAILPASPGLQDSWEWGGCSPDVGFGERFSKDFLDSREPHRDIHARMRLHNNRVGRQAVMENMRRKCKCHGTSGSCQLKTCWQVTPEFRTVGALLRNRFHRATLIRPHNRNGG--------QLEPGPAGAPSPAPGTPGLRRRASHSDLVYFEKSPDFCEREPRLDSAGTVGRLCNKSSTGPDGCGSMCCGRGHNILRQTRSERCHCRFHWCCFVVCEECRITEWVSVC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-10a; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>36</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P48615.1</td>
+                
+              
+                <td>34.688</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>206</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>16</td>
+                
+              
+                <td>353</td>
+                
+              
+                <td>7.12e-74</td>
+                
+              
+                <td>234</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>ALLPGWVSATLLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEK----GRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>ALHTGVCYGIKWLALSKTPAALALNQTQHC------------------------KQLEGLVSAQVQLCRSNLELMRTIVHAARGAMKACRRAFADMRWNCSSIELAPNYLLDLERGTRESAFVYALSAATISHTIARACTSGDLPGCSCGPVPGEPPGPGNRWGGCADNLSYGLLMGAKFSDAPMKVKKTGSQANKLMRLHNSEVGRQALRASLETKCKCHGVSGSCSIRTCWKGLQELQDVAADLKTRYLSATKVVHRPMGTRK-------HLVPKDLDIRPVKDSELVYLQSSPDFCMKNEKVGSHGTQDRQCNKTSNGSDSCDLMCCGRGYNPYTDRVVERCHCKYHWCCYVTCRRCERTVERYVC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-11; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>37</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9GZT5.1</td>
+                
+              
+                <td>38.667</td>
+                
+              
+                <td>375</td>
+                
+              
+                <td>177</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>48</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>42</td>
+                
+              
+                <td>416</td>
+                
+              
+                <td>8.96e-74</td>
+                
+              
+                <td>236</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>TDSKSLQLVLEPSLQL---------LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLF---GKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRG-------------------------------------PGGPD-WHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNR---ASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>NDILDLRLPPEPVLNANTVCLTLPGLSRRQMEVCVRHPDVAASAIQGIQIAIHECQHQFRDQRWNCSSLETRNKIPYESPIFSRGFRESAFAYAIAAAGVVHAVSNACALGKLKACGCDASRRGDEEAFRRKLHRLQLDALQRGKGLSHGVPEHPALPTASPGLQDSWEWGGCSPDMGFGERFSKDFLDSREPHRDIHARMRLHNNRVGRQAVMENMRRKCKCHGTSGSCQLKTCWQVTPEFRTVGALLRSRFHRATLIRPHNRNGGQLEPGPAGAPSPAPGAPGPRRRASPADLVYFEKSPDFCEREPRLDSAGTVGRLCNKSSAGSDGCGSMCCGRGHNILRQTRSERCHCRFHWCCFVVCEECRITEWVSVC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-10a; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>38</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P28465.2</td>
+                
+              
+                <td>41.987</td>
+                
+              
+                <td>312</td>
+                
+              
+                <td>167</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>363</td>
+                
+              
+                <td>36</td>
+                
+              
+                <td>345</td>
+                
+              
+                <td>4.93e-72</td>
+                
+              
+                <td>229</td>
+                
+              
+                <td>7227</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRR----GPGGPD--WHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRV--LYGNRG----SNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHT</td>
+                
+              
+                <td>LTPGQRNMCREMPDALIALGEGHQLGAQECQHQFRGHRWNCSEVWQRNVFAHVIPTASREAAYTYAIASAGAAYAVTAACARGNISTCGCDVRHKATPTGGGTPDEPWKWGGCSADVDFGMRYARRFMDARELERDSRTLMNLHNNRAGRTLVKKMLRTDCKCHGVSGSCVMKTCWKSLPPFRLVGDRLMLKYQKAKTVQAVKGKRGLRLVLSRKKHAGTAR--AQKPVLDWPKRMELIYLEASPNYCERSLQTGSQGTSGRTCQRTGHGPQSCDLLCCGRGHNTQHIRRTTQCRCQFRWCCEVKCDECDES</td>
+                
+              
+                <td>Drosophila melanogaster</td>
+                
+              
+                <td>fruit fly</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-2; AltName: Full=dWnt-2; Flags: Precursor [Drosophila melanogaster]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>39</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q8R5M2.1</td>
+                
+              
+                <td>36.800</td>
+                
+              
+                <td>375</td>
+                
+              
+                <td>211</td>
+                
+              
+                <td>12</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>363</td>
+                
+              
+                <td>1.03e-70</td>
+                
+              
+                <td>226</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>ALLPGWVSATLLLALAALPAALAANSSGRWWGIVNVASSTNL---LTDSKSLQLVLEPSLQL-LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRV------LYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>SLLARWLAAAFGLTL--LLAAL--RPSAAYFGLTGSEPLTILPLTLETEAAAQAHYKACDRLKLERKQRRMCRRDPGVAETLVEAVSMSALECQYQFRFERWNC-TLEGRYR-ASLLKRGFKETAFLYAISSAGLTHALAKACSAGRMERCTCDEAPDLENREAWQWGGCGDNLKYSSKFVKEFLGR-RSSKDLRARVDFHNNLVGVKVIKAGVETTCKCHGVSGSCTVRTCWRQLAPFHEVGKHLKHKYETSLKVGSTTNEATGEAGAISPPRGRASGSGGGDPLPRTP---ELVHLDDSPSFC-LAGRF-SPGTAGRRCHRE----KNCESICCGRGHNTQSRVVTRPCQCQVRWCCYVECRQCTQREEVYTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-9a; AltName: Full=Protein Wnt-14; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>40</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">O14904.2</td>
+                
+              
+                <td>36.997</td>
+                
+              
+                <td>373</td>
+                
+              
+                <td>209</td>
+                
+              
+                <td>12</td>
+                
+              
+                <td>7</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>7</td>
+                
+              
+                <td>363</td>
+                
+              
+                <td>3.43e-70</td>
+                
+              
+                <td>225</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>LPGWVSATLLLALAALPAALAANSSGRWWGIVNVASSTNL---LTDSKSLQLVLEPSLQL-LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRV------LYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LARWLAAAFGLTL--LLAAL--RPSAAYFGLTGSEPLTILPLTLEPEAAAQAHYKACDRLKLERKQRRMCRRDPGVAETLVEAVSMSALECQFQFRFERWNC-TLEGRYR-ASLLKRGFKETAFLYAISSAGLTHALAKACSAGRMERCTCDEAPDLENREAWQWGGCGDNLKYSSKFVKEFLGR-RSSKDLRARVDFHNNLVGVKVIKAGVETTCKCHGVSGSCTVRTCWRQLAPFHEVGKHLKHKYETALKVGSTTNEAAGEAGAISPPRGRASGAGGSDPLPRTP---ELVHLDDSPSFC-LAGRF-SPGTAGRRCHRE----KNCESICCGRGHNTQSRVVTRPCQCQVRWCCYVECRQCTQREEVYTC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-9a; AltName: Full=Protein Wnt-14; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>41</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">O35468.2</td>
+                
+              
+                <td>39.498</td>
+                
+              
+                <td>319</td>
+                
+              
+                <td>163</td>
+                
+              
+                <td>7</td>
+                
+              
+                <td>61</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>59</td>
+                
+              
+                <td>357</td>
+                
+              
+                <td>1.20e-69</td>
+                
+              
+                <td>223</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>LQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGK--IVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKP--------PSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LLKLSRRQKQLCRREPGLAETLRDAAHLGLLECQFQFRQERWNC------SLEGRTGLLQRGFKETAFLYAVSAAALTHALARACSAGRMERCTCDDSPGLESRQAWQWGVCGDNLKYSTKFLSNFLGPKRGSKDLRARADAHNTHVGIKAVKSGLRTTCKCHGVSGSCAVRTCWKQLSPFRETGQVLKLRYDTAVKV-------SSATNEALGRLELWAPA-KPGGPAKGLAPRPGDLVYMEDSPSFCRPSKY--SPGTAGRVCSRDS----SCSSLCCGRGYDTQSRMVVFSCHCQVQWCCYVECQQCAQQELVYTC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-9b; AltName: Full=Protein Wnt-14b; AltName: Full=Protein Wnt-15; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>42</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">O14905.3</td>
+                
+              
+                <td>38.994</td>
+                
+              
+                <td>318</td>
+                
+              
+                <td>166</td>
+                
+              
+                <td>6</td>
+                
+              
+                <td>61</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>57</td>
+                
+              
+                <td>355</td>
+                
+              
+                <td>1.45e-69</td>
+                
+              
+                <td>223</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>LQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGK--IVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHK-------PPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>LLKLSRRQKQLCRREPGLAETLRDAAHLGLLECQFQFRHERWNCS------LEGRMGLLKRGFKETAFLYAVSSAALTHTLARACSAGRMERCTCDDSPGLESRQAWQWGVCGDNLKYSTKFLSNFLGSKRGNKDLRARADAHNTHVGIKAVKSGLRTTCKCHGVSGSCAVRTCWKQLSPFRETGQVLKLRYDSAVKV-------SSATNEALGRLELWAPARQGSLTKGLAPRSGDLVYMEDSPSFCRPSKY--SPGTAGRVCSREA----SCSSLCCGRGYDTQSRLVAFSCHCQVQWCCYVECQQCVQEELVYTC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-9b; AltName: Full=Protein Wnt-14b; AltName: Full=Protein Wnt-15; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>43</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">O96014.2</td>
+                
+              
+                <td>34.688</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>206</td>
+                
+              
+                <td>3</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>16</td>
+                
+              
+                <td>353</td>
+                
+              
+                <td>1.41e-68</td>
+                
+              
+                <td>220</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>ALLPGWVSATLLLALAALPAALAANSSGRWWGIVNVASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEK----GRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>ALQTGVCYGIKWLALSKTPSALALNQTQHC------------------------KQLEGLVSAQVQLCRSNLELMHTVVHAAREVMKACRRAFADMRWNCSSIELAPNYLLDLERGTRESAFVYALSAAAISHAIARACTSGDLPGCSCGPVPGEPPGPGNRWGGCADNLSYGLLMGAKFSDAPMKVKKTGSQANKLMRLHNSEVGRQALRASLEMKCKCHGVSGSCSIRTCWKGLQELQDVAADLKTRYLSATKVVHRPMGTRK-------HLVPKDLDIRPVKDSELVYLQSSPDFCMKNEKVGSHGTQDRQCNKTSNGSDSCDLMCCGRGYNPYTDRVVERCHCKYHWCCYVTCRRCERTVERYVC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-11; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>44</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q64527.2</td>
+                
+              
+                <td>39.394</td>
+                
+              
+                <td>297</td>
+                
+              
+                <td>170</td>
+                
+              
+                <td>4</td>
+                
+              
+                <td>81</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>42</td>
+                
+              
+                <td>336</td>
+                
+              
+                <td>4.83e-67</td>
+                
+              
+                <td>216</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>SVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGP-GGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRAC-----NSSSPALDGCELLC--CGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>SVALGAQIGIEECKFQFAWERWNCPEHAFQFSTHNRLRAATRETSFIHAIRSAAIMYAVTKNCSMGDLENCGCDESQNGKTGGHGWIWGGCSDNVEFGEKISRLFVDSLEKGKDARALVNLHNNRAGRLAVRASTKRTCKCHGISGSCSIQTCWLQLADFRQMGNYLKAKYDRALKIEMDKRQLRAGNRAEGRWALTE--AFLPSTEAELIFLEGSPDYCNRNASLSIQGTEGRECLQNARSASRREQRSCGRLCTECGLQVEERRAEAVSSCDCNFQWCCTVKCGQCRRVVSRYYC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-8a; AltName: Full=Protein Wnt-8d; AltName: Full=Stimulated by retinoic acid gene 11 protein; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>45</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9WUD6.1</td>
+                
+              
+                <td>42.466</td>
+                
+              
+                <td>292</td>
+                
+              
+                <td>147</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>81</td>
+                
+              
+                <td>360</td>
+                
+              
+                <td>41</td>
+                
+              
+                <td>323</td>
+                
+              
+                <td>2.44e-62</td>
+                
+              
+                <td>204</td>
+                
+              
+                <td>10090</td>
+                
+              
+                <td>SVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCD-YRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLY----GNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALD-----GCELLC--CGRGHRTRTQRVTERCNCTFHWCCHVSCRNC</td>
+                
+              
+                <td>SVAAGAQSGIEECKYQFAWDRWNCPERALQLSSHGGLRSANRETAFVHAISSAGVMYTLTRNCSLGDFDNCGCDDSRNGQLGGQGWLWGGCSDNVGFGEAISKQFVDALETGQDARAAMNLHNNEAGRKAVKGTMKRTCKCHGVSGSCTTQTCWLQLPEFREVGAHLKEKYHAALKVDLLQGAGNSAAGRGAIADTFR---------SISTRELVHLEDSPDYCLENKTLGLLGTEGRECLRRGRALGRWERRSCRRLCGDCGLAVEERRAETVSSCNCKFHWCCAVRCEQC</td>
+                
+              
+                <td>Mus musculus</td>
+                
+              
+                <td>house mouse</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-8b; Flags: Precursor [Mus musculus]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>46</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q93098.3</td>
+                
+              
+                <td>42.466</td>
+                
+              
+                <td>292</td>
+                
+              
+                <td>147</td>
+                
+              
+                <td>5</td>
+                
+              
+                <td>81</td>
+                
+              
+                <td>360</td>
+                
+              
+                <td>42</td>
+                
+              
+                <td>324</td>
+                
+              
+                <td>3.46e-62</td>
+                
+              
+                <td>204</td>
+                
+              
+                <td>9606</td>
+                
+              
+                <td>SVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCD-YRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLY----GNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALD-----GCELLC--CGRGHRTRTQRVTERCNCTFHWCCHVSCRNC</td>
+                
+              
+                <td>SVAAGAQSGIEECKYQFAWDRWNCPERALQLSSHGGLRSANRETAFVHAISSAGVMYTLTRNCSLGDFDNCGCDDSRNGQLGGQGWLWGGCSDNVGFGEAISKQFVDALETGQDARAAMNLHNNEAGRKAVKGTMKRTCKCHGVSGSCTTQTCWLQLPEFREVGAHLKEKYHAALKVDLLQGAGNSAAGRGAIADTFR---------SISTRELVHLEDSPDYCLENKTLGLLGTEGRECLRRGRALGRWERRSCRRLCGDCGLAVEERRAETVSSCNCKFHWCCAVRCEQC</td>
+                
+              
+                <td>Homo sapiens</td>
+                
+              
+                <td>human</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-8b; Flags: Precursor [Homo sapiens]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>47</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P28466.2</td>
+                
+              
+                <td>47.429</td>
+                
+              
+                <td>175</td>
+                
+              
+                <td>82</td>
+                
+              
+                <td>1</td>
+                
+              
+                <td>195</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>839</td>
+                
+              
+                <td>1003</td>
+                
+              
+                <td>7.92e-49</td>
+                
+              
+                <td>177</td>
+                
+              
+                <td>7227</td>
+                
+              
+                <td>RFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>RSLMNLHNNEAGRRAVIKKARITCKCHGVSGSCSLITCWQQLSSIREIGDYLREKYEGATKVKINKRG----------RLQIKDLQFKVPTAHDLIYLDESPDWCRNSYALHWPGTHGRVCHKNSSGLESCAILCCGRGYNTKNIIVNERCNCKFHWCCQVKCEVCTKVLEEHTC</td>
+                
+              
+                <td>Drosophila melanogaster</td>
+                
+              
+                <td>fruit fly</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-5; AltName: Full=dWnt-3; AltName: Full=dWnt-5; Flags: Precursor [Drosophila melanogaster]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>48</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P28466.2</td>
+                
+              
+                <td>39.062</td>
+                
+              
+                <td>128</td>
+                
+              
+                <td>77</td>
+                
+              
+                <td>1</td>
+                
+              
+                <td>64</td>
+                
+              
+                <td>190</td>
+                
+              
+                <td>554</td>
+                
+              
+                <td>681</td>
+                
+              
+                <td>2.57e-25</td>
+                
+              
+                <td>109</td>
+                
+              
+                <td>7227</td>
+                
+              
+                <td>LSRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNCPTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPG-GPDWHWGGCSDNIDFGRLFGREFVDSGEK</td>
+                
+              
+                <td>LSNSQKKQCVKHTSVMPAISRGARAAIQECQFQFKNRRWNCSTTNDETVFGPMTSLAAPEMAFIHALAAATVTSFIARACRDGQLASCSCSRGSRPKQLHDDWKWGGCGDNLEFAYKFATDFIDSREK</td>
+                
+              
+                <td>Drosophila melanogaster</td>
+                
+              
+                <td>fruit fly</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-5; AltName: Full=dWnt-3; AltName: Full=dWnt-5; Flags: Precursor [Drosophila melanogaster]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>49</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">P40589.2</td>
+                
+              
+                <td>32.890</td>
+                
+              
+                <td>301</td>
+                
+              
+                <td>180</td>
+                
+              
+                <td>7</td>
+                
+              
+                <td>65</td>
+                
+              
+                <td>360</td>
+                
+              
+                <td>246</td>
+                
+              
+                <td>529</td>
+                
+              
+                <td>5.38e-48</td>
+                
+              
+                <td>171</td>
+                
+              
+                <td>7227</td>
+                
+              
+                <td>SRKQRRLIRQNPGILHSVSGGLQSAVRECKWQFRNRRWNC--PTAPGPHLFGKIVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVD-SGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCHGMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSSSPALDGCELLCCGRGHRTRTQRVTERCNCTFH--WCCHVSCRNC</td>
+                
+              
+                <td>TRRQNHQCRKETGLPGTLSEARRLATTHCEEQFRYDRWNCSIETRGKRNIFKKLY----KETAFVHALTAAAMTHSIARACAEGRMTKCSCGPKKHNREAQDFQWGGCNDNLKHGKRVTRSFLDLRGGDGDEVSEILR-HDSEVGIEAVSSQMMDKCKCHGVSGSCSMKTCWKKMADFNATATLLRQKYNEAIRKAPNQRSMRQVSSSRMKKPKQRRKKPQQSQYTTLYYLETSPSYC--------AVTKDRQCLHP----DNCGTLCCGRGYTTQVVKQVEKCRCRFNNGRCCQLICDYC</td>
+                
+              
+                <td>Drosophila melanogaster</td>
+                
+              
+                <td>fruit fly</td>
+                
+              
+                <td>RecName: Full=Protein Wnt-4; AltName: Full=dWnt-4; Flags: Precursor [Drosophila melanogaster]
+</td>
+                
+              </tr>
+            <tr>
+              
+              <td>50</td>
+              
+                <td>P04628</td>
+                
+              
+                <td class="row-value">Q9VFX1.2</td>
+                
+              
+                <td>25.513</td>
+                
+              
+                <td>341</td>
+                
+              
+                <td>209</td>
+                
+              
+                <td>14</td>
+                
+              
+                <td>40</td>
+                
+              
+                <td>369</td>
+                
+              
+                <td>2</td>
+                
+              
+                <td>308</td>
+                
+              
+                <td>2.42e-16</td>
+                
+              
+                <td>80.1</td>
+                
+              
+                <td>7227</td>
+                
+              
+                <td>VASSTNLLTDSKSLQLVLEPSLQLLSRKQRRLIRQNPGILHSVSG-GLQSAVRECKWQFRNRRWNCPTAPGPHLFGK-IVNRGCRETAFIFAITSAGVTHSVARSCSEGSIESCTCDYRRRGPGGPDWHWGGCSDNIDFGRLFGREFVDSGEKGRDLRFLMNLHNNEAGRTTVFSEMRQECKCH---GMSGSCTVRTCWMRLPTLRAVGDVLRDRFDGASRVLYGNRGSNRASRAELLRLEPEDPAHKPPSPHDLVYFEKSPNFCTYSGRLGTAGTAGRACNSS-SPALD---GCELLCCGRGHRTRTQ--RVTERCNCTFHWCCHVSCRNCTHTRVLHEC</td>
+                
+              
+                <td>IFAITFFMGITSTLAAVLEP----MSYYQYTQF-QAPLSWEDITGKGLKQALDSCQQSFQWQRWNCPSQDFVQKNSKPEENSPNREDVYVAAISMAAIVHTLTKDCANGVIAGCGCT--ENALNVPCAHEPTKALE-QYEKHFGS---GSGAIG---------HNRRVVGALLQRSLEQECRCKQPGAVQGECQEEECVAVLKPFEAIAQDLLQMYDDA--IQLEGASSNLKIMWQNIPLD------------SLVFMQDSPNYCERDATGLWKGTRGRQCSKDGSGSLEERLSCQQLCRVCGYRVRSQHVRTERRCNCKLVWGFRLQCDVCVQLERQYSC</td>
+                
+              
+                <td>Drosophila melanogaster</td>
+                
+              
+                <td>fruit fly</td>
+                
+              
+                <td>RecName: Full=Wnt inhibitor of Dorsal protein; AltName: Full=Protein Wnt-8; AltName: Full=dWnt-8; Flags: Precursor [Drosophila melanogaster]
+</td>
+                
+              </tr>
+            </tbody>
         </table>
-        <br></br>
-        <br></br>
+        <br>
+        <br>
+        <button class="ui-button ui-widget ui-corner-all" id="btn-table-rows">Get Drug Bank .sdf files</button>
+      <!-- </form> -->
+        <br>
+        <br>
         <p></p>
       </div>
       <script type="text/javascript" class="init">
         $(document).ready(function() {
-            $('#my_datatable').DataTable( {
-              "pageLength": 20,
-              "order": [],
-              columnDefs: [ {
-                targets: [13,14],
-                render: $.fn.dataTable.render.ellipsis( 10 ),
-                responsive: true
-            } ]
-            });
+          jQuery.fn.invisible = function() {
+            return this.css('visibility', 'hidden');
+          };
+          // $('.dt-checkboxes-select-all .sorting_disabled').invisible(); 
+          $('#example thead tr').clone(true).appendTo( '#example thead' );
+          $('#example thead tr:eq(1) th[class="search"]').each( function (i) {
+              var title = $(this).text();
+              $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+      
+              $( 'input', this ).on( 'keyup change', function () {
+                  if ( table.column(i).search() !== this.value ) {
+                      table
+                          .column(i)
+                          .search( this.value )
+                          .draw();
+                  }
+              } );
+          } );
 
-        } );
-      </script> 
+        // A mix of this (https://stackoverflow.com/questions/42570465/datatables-select-all-checkbox)
+        // and that (https://stackoverflow.com/questions/33671555/get-the-selected-rows-from-a-table)
+        
+        var table = $('#example')
+				// .addClass( 'wrap' )
+				.DataTable( {
+					responsive: true,
+					columnDefs: [
+            { targets: 0, checkboxes: true, searchable: false},
+            { targets: [14,15], render: $.fn.dataTable.render.ellipsis( 10, true ) },
+            { targets: [18], render: $.fn.dataTable.render.ellipsis( 60, true ) },
+            { targets: [18], width:400},
+            { "searchable": false, "targets": 1}
+					],
+          autoWidth: false,
+          // pageLength: 20,
+          order: [],
+          // because of Known Limitations at https://www.gyrocode.com/projects/jquery-datatables-checkboxes/
+          // must make vertical scrolling instead of page length to allow select-all on "all pages"
+          scrollY: "600px",
+          paging: false,
+          scrollX: true,
+          orderCellsTop: true,
+          fixedHeader: true,
+          fixedColumns: true,
+          initComplete: function () {
+            jQuery(jQuery.fn.dataTable.tables(true)).DataTable().columns.adjust().draw();
+          },
+				} );
+        
+        $('#frm-example').on('submit', function(e){
+          var form = this;
+          var rows_selected = table.column(0).checkboxes.selected();
+
+          // Iterate over all selected checkboxes
+          $.each(rows_selected, function(index, rowId){
+            // Create a hidden element 
+            $(form).append(
+                $('<input>')
+                    .attr('type', 'hidden')
+                    .attr('name', 'id[]')
+                    .val(rowId)
+            );
+          });
+          // Prevent actual form submission
+          e.preventDefault();
+        }); 
+        
+        $('#btn-table-rows').click(function (event) {
+          var values = [];
+          $('table input.dt-checkboxes:checked').each(function () {
+            var rowValue = $(this).closest('tr').find('td.row-value').text();
+            values.push(rowValue)
+          });
+          var json = JSON.stringify(values);
+          alert(json);
+        });
+          
+      } );
+      </script>
     </body>
 </html>

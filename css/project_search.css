@@ -77,3 +77,16 @@ input[class="resi"] {
 ::placeholder  { /* Most modern browsers support this now. */
   color:rgb(170, 159, 170) !important;
 }
+
+div table thead tr:nth-child(2) th.dt-checkboxes-select-all.sorting_disabled {
+  display: none
+}
+
+.ui-autocomplete {
+  max-height: 400px !important;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+  /* add padding to account for vertical scrollbar */
+  padding-right: 20px;
+} 
