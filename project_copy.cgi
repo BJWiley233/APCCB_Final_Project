@@ -46,8 +46,9 @@ def main():
         else:
             job_title = None
  
-     
-    # Search by Uniprot ID will only run if no text entry is given
+ 
+    job_title = form.getvalue("job_title")
+     # Search by Uniprot ID will only run if no text entry is given
     if form.getvalue("uniprot_id") and not form.getvalue('fasta_entered'):
         # https://stackoverflow.com/questions/52569622/protein-sequence-from-uniprot-protein-id-python
         import requests
@@ -71,19 +72,10 @@ def main():
         if form.getvalue("end_resi"):
             end = form.getvalue("end_resi")
         fa.seq = fa.seq[start:end]
-        
-        #fasta_io = StringIO(search_entry)
-        #fasta_io = StringIO(fa)
-        #fasta = SeqIO.parse(fa, "fasta")
-        #SeqIO.write(fa, fa_file, format="fasta")
-        
-        
-    
     
     tax_arg = ""
     tax_filter = ""
     organisms = form.getlist("organisms")
-    # organisms = [9606, 10090, 10116, 10029, 83333, 559292, 3702, 7227, 9913, 9598]
     if organisms:
         tax_arg = "-taxids"
         tax_filter = ",".join([str(i) for i in organisms])
@@ -93,27 +85,24 @@ def main():
         organisms = form.getvalue("taxid_manual")
         tax_filter = organisms.replace(" ","")
     if not organisms:
+        # organisms = [9606, 10090, 10116, 10029, 83333, 559292, 3702, 7227, 9913, 9598]
         organisms = None
 
-    #fasta_io = StringIO(search_entry)
-    #fasta = SeqIO.parse(fasta_io, "fasta")
-    #fa = [record for record in fasta][0] ## to get name for fasta
-    #fasta_io = StringIO(search_entry)
-    #fasta = SeqIO.parse(fasta_io, "fasta")
+    # fasta_io = StringIO(search_entry)
+    # fasta = SeqIO.parse(fasta_io, "fasta")
+    # fa = [record for record in fasta][0]
+    # fasta_io = StringIO(search_entry)
+    # fasta = SeqIO.parse(fasta_io, "fasta")
 
 
     with tempfile.TemporaryDirectory() as tmpdirname:
-        tmpdirname = "/tmp/bwiley4"
-        if job_title is not None:
-            fa_file = tmpdirname + "/" + job_title + ".fasta"
-        else:
-            fa_file = tmpdirname + "/" + fa.id.split("|")[-1] + ".fasta"
+        fa_file = tmpdirname + "/" + fa.id.split("|")[-1] + ".fasta"
         # fa_file = "/Users/brian/JHU_Summer/final_project/test/test.fasta"
         try: 
-            #handle = open(fa_file , "w")
-            #writer = FastaWriter(handle)
-            #writer.write_file(fasta)
-            #handle.close()
+            # handle = open(fa_file , "w")
+            # writer = FastaWriter(handle)
+            # writer.write_file(fasta)
+            # handle.close()
             SeqIO.write(fa, fa_file, format="fasta")
             test1 = "ok"
         except Exception as e1:
@@ -173,10 +162,10 @@ def main():
     env = jinja2.Environment(loader=templateLoader)
     template = env.get_template('project.html')
     print("Content-Type: text/html\n\n")
-    if test1:
-        print(test1)
+    # print(test1)
     print(template.render(final_df=df,
-                          final_cols=colnames))
+                          final_cols=colnames,
+                          data=search_entry))
    
    
       
