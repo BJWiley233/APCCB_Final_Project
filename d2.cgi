@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3
 
 # import mysql.connector
+# test
 # from mysql.connector import errorcode
 import jinja2
 import cgi,cgitb 
