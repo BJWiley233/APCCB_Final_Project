@@ -1,0 +1,33 @@
+{
+    "name": "loading-visualization",
+    "version": "1.2.14",
+    "description": "CSS and JavaScript library for determinate and indeterminate loading bars and spinners",
+    "license": "BSD-3-Clause",
+    "author": "Jakub Rada",
+    "keywords": [
+        "loading",
+        "bar",
+        "spinner"
+    ],
+    "main": "dist/main.js",
+    "types": "dist/main.d.ts",
+    "files": [
+        "dist/",
+        "LICENSE",
+        "README.md",
+        "package.json"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RIDICS/Loading-Visualization"
+    },
+    "devDependencies": {
+        "gulp": "^4.0.0",
+        "gulp-dart-sass": "^0.9.1",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-typescript": "^5.0.1",
+        "gulp-tslint": "^8.1.3",
+        "typescript": "^3.6.3",
+        "tslint": "^5.20.0"
+    }
+}

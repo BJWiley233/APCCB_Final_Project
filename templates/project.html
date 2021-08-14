@@ -12,7 +12,8 @@
         <!-- <link href="css/project.css" rel="stylesheet"> -->
         
         <link href="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet">
-     
+        <link href="js/node_modules/Loading-Visualization/dist/main.css" rel="stylesheet">
+        
     
         <script src="http://cdn.datatables.net/1.10.25/js/jquery.js" type="text/javascript"></script>
         <script type="text/javascript" src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
@@ -20,18 +21,32 @@
         <script type="text/javascript" src="http://cdn.datatables.net/plug-ins/1.10.25/dataRender/ellipsis.js"></script>
        
         <script src="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.11/js/dataTables.checkboxes.min.js"></script>
+        <script src="js/node_modules/Loading-Visualization/dist/main.js"></script>
         
     </head>
     <body>
+      <div class="loader"></div>
       <h1 style="padding-left:5px;">Protein blast to drug leads</h1>
-
       
+      <div style="font-size: 25px; display:none;" id="target" class="lv-circles lv-mid lg" data-label="Loading..."></div>
       <div class="container" id="dt_container">
-        <h4 style="padding-left:25px;">Results:</h4> 
-  
+        <br>
+        <br>
+        <span style="font-size: 3em; color:yellow">Results: <b style="font-size: 40%; font-weight: normal">Check boxes to select for sdf files for Uniprot drug targets and submit below</b></span>
+        <br>
+        <br>
+        <div>
+          <button class="ui-button ui-widget ui-corner-all" id="btn-table-rows">Get Drug Bank .sdf files</button>&nbsp;&nbsp;&nbsp;
+          <div class="checkbox" style="display: inline-block;">
+            <label class="unselectable">
+            <input id="chkAlreadyDelivered" type="checkbox" style="padding-left: 60px;" checked name="include_search"> Include search entry in output folder</label>
+          </div>
+        </div>
+        
         <table style="text-align:left;" id="example" class="display" cellspacing="0" width="100%">
-        <!-- <table id="example" class="display" style="width:100%"> -->
+ 
           <thead style="color: white;">
+            
             <tr>
               <th class="dt-checkboxes-select-all sorting_disabled" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20px;" data-col="0" aria-label>
                 <input type=checkbox>
@@ -59,7 +74,7 @@
         </table>
         <br>
         <br>
-        <button class="ui-button ui-widget ui-corner-all" id="btn-table-rows">Get Drug Bank .sdf files</button>
+        <!-- <button class="ui-button ui-widget ui-corner-all" id="btn-table-rows">Get Drug Bank .sdf files</button> -->
 
         <br>
         <br>
@@ -67,6 +82,10 @@
       </div>
       <script type="text/javascript" class="init">
         $(document).ready(function() {
+          let loader = new lv();
+          loader.initLoaderAll();
+          loader.startObserving();
+
           $('#example thead tr').clone(true).appendTo( '#example thead' );
           $('#example thead tr:eq(1) th').each( function (i) {
               if ( i === 0 ) {
@@ -101,51 +120,117 @@
           paging: false,
           scrollX: true,
           orderCellsTop: true,
-          fixedHeader: true,
-
+          fixedHeader: true
 				} );
 
         
-        
-        $('#frm-example').on('submit', function(e){
-          var form = this;
-          var rows_selected = table.column(0).checkboxes.selected();
+        // $('#frm-example').on('submit', function(e){
+        //   var form = this;
+        //   var rows_selected = table.column(0).checkboxes.selected();
 
-          // Iterate over all selected checkboxes
-          $.each(rows_selected, function(index, rowId){
-            // Create a hidden element 
-            $(form).append(
-                $('<input>')
-                    .attr('type', 'hidden')
-                    .attr('name', 'id[]')
-                    .val(rowId)
-            );
-          });
-          // Prevent actual form submission
-          e.preventDefault();
-        }); 
-        
+        //   // Iterate over all selected checkboxes
+        //   $.each(rows_selected, function(index, rowId){
+        //     // Create a hidden element 
+        //     $(form).append(
+        //         $('<input>')
+        //             .attr('type', 'hidden')
+        //             .attr('name', 'id[]')
+        //             .val(rowId)
+        //     );
+        //   });
+        //   // Prevent actual form submission
+        //   e.preventDefault();
+        // }); 
+
+       
         $('#btn-table-rows').click(function (event) {
+          $("#target").toggle();
+          // for the UniProt subject IDs
           var values = [];
+          // for entering blast entries and a json list of drugbank IDs to MySQL 
+          // ultimately I'd want to add a new row for each drug but that is a decision 
+          // that would increase the size of the database when instead you could search
+          // the json string for your drug id
+          var database_entries = []
+          var database_entries_dict = {}
+          // add selected Uniprot IDs to array to get DrugBankIDs
           $('table input.dt-checkboxes:checked').each(function () {
             var rowValue = $(this).closest('tr').find('td.row-value').text();
             values.push(rowValue)
+            // this does't work for the rows
+            // var fullRow = $(this).closest('td').siblings('td').text()
+            // database_entries.push(fullRow)
+          });
+          // this does work for the rows. https://stackoverflow.com/questions/18565669/jquery-to-get-table-row-values-of-selected-checkboxes
+          $.each($('table input.dt-checkboxes:checked').closest("td").siblings("td"),
+            function () {
+              var rowArray = []
+              var row_index = $(this).parent().index();
+              // This what I like to see! Nearly 5,000 votes!
+              // https://stackoverflow.com/questions/1098040/checking-if-a-key-exists-in-a-javascript-object
+              if (!(row_index in database_entries_dict)) {
+                database_entries_dict[row_index] = []
+              }
+              console.log(row_index);
+              // seriously internet!!! this is it????:  $($.parseHTML($(this).html())).filter('.ellipsis').attr("title");
+              // we need better documentation to figure this stuff out.  this is borderline ridiulous that jQuery  
+              // doesn't have HUNDREDS of examples of this.  they need to get their act together and be more like python documented
+              var htmlString = $($.parseHTML($(this).html())).filter('.ellipsis').attr("title");
+              if ( htmlString ) {
+                // console.log( htmlString );
+                database_entries.push(htmlString);
+                database_entries_dict[row_index].push(htmlString)
+              } else {
+                database_entries.push($(this).text());
+                database_entries_dict[row_index].push($(this).text())
+              }  
           });
           var json = JSON.stringify(values);
-          // alert(json);
+          var jsonRows = JSON.stringify(database_entries_dict);
+          if (values.length >= 10) {
+            alert("You choose 10 or more Uniprot IDs.\nThis could take a while.\nSit back and relax :)")
+          }
+          
+          // var $filterCheckboxes = $('#chkAlreadyDelivered');
+          //   $filterCheckboxes.( function(){
+          //           console.log($(this).val());
+          // });
+          console.log($('#chkAlreadyDelivered').is(":checked"));
+
+          function forward(data) {
+            return(data);
+          }
+
           $.ajax({
             type: "POST",
             url: "http://localhost/cgi-bin/drugbank_sdfs.cgi",
             datatype: "json",
-            data: {j: json , foo: 'foo'},
+            // makes sure if "include search entry in output folder" is the file "fa_file"
+            // seriously jQuery is complicated: https://stackoverflow.com/questions/2834350/get-checkbox-value-in-jquery
+            data: {up_ids: json, 
+                   rows: jsonRows, 
+                   'file':forward({{ fa_file|tojson }}),
+                   'include_search': $('#chkAlreadyDelivered').is(":checked")},
             success: function (response) {
                 console.log(response);
-                // window.location.href = "http://localhost/cgi-bin/drugbank_sdfs.cgi";
+                // final cgi for saving final tar folder
+                window.location.href = "http://localhost/cgi-bin/tar.cgi";
             }
           })
-        });
-          
-      } );
+        });   
+
+      });
+
       </script>
+
+      <script type="text/javascript">
+        function test_func(data) {
+            console.log(data);
+        }
+        //https://stackoverflow.com/questions/33344773/rendering-to-js-with-jinja-produces-invalid-number-rather-than-string
+        test_func({{ data|tojson }})
+        test_func({{ fa_file|tojson }})
+ 
+    </script>
     </body>
 </html>

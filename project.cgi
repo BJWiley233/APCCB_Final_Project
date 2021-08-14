@@ -13,11 +13,7 @@ from Bio import Entrez
 import json
 
 
-'''
->CXCL6_HUMAN C-X-C motif chemokine 6 OS=Homo sapiens OX=9606 GN=CXCL6 PE=1 SV=4
-MSLPSSRAARVPGPSGSLCALLALLLLLTPPGPLASAGPVSAVLTELRCTCLRVTLRVNP
-KTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSGNKKN
-'''
+
 
 
 def main():
@@ -28,62 +24,61 @@ def main():
         fasta_io = StringIO(search_entry)
         fasta = SeqIO.parse(fasta_io, "fasta")
         fa = [record for record in fasta][0] ## to get name for fasta
-        #fasta_io = StringIO(search_entry)
-        #fasta = SeqIO.parse(fasta_io, "fasta")
+        start = 0
+        end = len(fa.seq)
         if form.getvalue("job_title"):
             job_title = form.getvalue("job_title") # to name fasta file
         else:
             job_title = None
     else:
+        ## make default search entry for fun so it doesn't error
         search_entry = ">CXCL6_HUMAN C-X-C motif chemokine 6 OS=Homo sapiens OX=9606 GN=CXCL6 PE=1 SV=4\n\
             MSLPSSRAARVPGPSGSLCALLALLLLLTPPGPLASAGPVSAVLTELRCTCLRVTLRVNP\
             KTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSGNKKN"
         fasta_io = StringIO(search_entry)
         fasta = SeqIO.parse(fasta_io, "fasta")
+        # fasta record
         fa = [record for record in fasta][0]
+        start = 0
+        end = len(fa.seq)
         if form.getvalue("job_title"):
             job_title = form.getvalue("job_title") # to name fasta file
         else:
             job_title = None
  
-     
+ 
+    job_title = form.getvalue("job_title")
     # Search by Uniprot ID will only run if no text entry is given
     if form.getvalue("uniprot_id") and not form.getvalue('fasta_entered'):
         # https://stackoverflow.com/questions/52569622/protein-sequence-from-uniprot-protein-id-python
         import requests
         baseUrl="http://www.uniprot.org/uniprot/"
         uniprot_id = form.getvalue("uniprot_id")
-        # remove decimal for version
+        # remove decimal version number if given as this can give a really old sequence?
+        # for example https://www.uniprot.org/uniprot/O75616.2.fasta gives >TrEMBL|O75616|Release 9|01-Jan-1999
         uniprot_id.split(".")[0]
         currentUrl=baseUrl + uniprot_id + ".fasta"
         response = requests.post(currentUrl)
         search_entry = response.text
-        #cData=''.join(response.text)
+ 
         fasta_io = StringIO(search_entry)
         fasta = SeqIO.parse(fasta_io, "fasta")
+        # fasta record
         fa = [record for record in fasta][0] ## to get name for fasta
         job_title = None # will be name of Uniprot "entry_name" field
 
         start = 0
         end = len(fa.seq)
         if form.getvalue("start_resi"):
-            start = form.getvalue("start_resi") - 1
+            start = int(form.getvalue("start_resi")) - 1
         if form.getvalue("end_resi"):
-            end = form.getvalue("end_resi")
+            end = int(form.getvalue("end_resi"))
         fa.seq = fa.seq[start:end]
-        
-        #fasta_io = StringIO(search_entry)
-        #fasta_io = StringIO(fa)
-        #fasta = SeqIO.parse(fa, "fasta")
-        #SeqIO.write(fa, fa_file, format="fasta")
-        
-        
     
     
     tax_arg = ""
     tax_filter = ""
     organisms = form.getlist("organisms")
-    # organisms = [9606, 10090, 10116, 10029, 83333, 559292, 3702, 7227, 9913, 9598]
     if organisms:
         tax_arg = "-taxids"
         tax_filter = ",".join([str(i) for i in organisms])
@@ -93,27 +88,19 @@ def main():
         organisms = form.getvalue("taxid_manual")
         tax_filter = organisms.replace(" ","")
     if not organisms:
+        # will search all organisms
         organisms = None
-
-    #fasta_io = StringIO(search_entry)
-    #fasta = SeqIO.parse(fasta_io, "fasta")
-    #fa = [record for record in fasta][0] ## to get name for fasta
-    #fasta_io = StringIO(search_entry)
-    #fasta = SeqIO.parse(fasta_io, "fasta")
 
 
     with tempfile.TemporaryDirectory() as tmpdirname:
         tmpdirname = "/tmp/bwiley4"
-        if job_title is not None:
-            fa_file = tmpdirname + "/" + job_title + ".fasta"
-        else:
-            fa_file = tmpdirname + "/" + fa.id.split("|")[-1] + ".fasta"
+        fa_file = tmpdirname + "/" + fa.id.split("|")[-1] + ".fasta"
         # fa_file = "/Users/brian/JHU_Summer/final_project/test/test.fasta"
         try: 
-            #handle = open(fa_file , "w")
-            #writer = FastaWriter(handle)
-            #writer.write_file(fasta)
-            #handle.close()
+            # handle = open(fa_file , "w")
+            # writer = FastaWriter(handle)
+            # writer.write_file(fasta)
+            # handle.close()
             SeqIO.write(fa, fa_file, format="fasta")
             test1 = "ok"
         except Exception as e1:
@@ -126,8 +113,12 @@ def main():
         my_env = os.environ.copy()
         ## for path to blastp
         my_env["PATH"] = "/usr/local/bin:" + my_env["PATH"]
+        ## for path to blastp on the server
+        my_env["PATH"] = "/usr/bin:" + my_env["PATH"]
         ## for access to taxonomy database: taxdb
         my_env["BLASTDB"] = "/Users/brian/uniprot_dbs"
+        ## for access to taxonomy database: taxdb on server
+        #my_env["BLASTDB"] = "/export/home/bwiley4/uniprot_dbs"
         
   
         COMMAND = "/usr/local/bin/blastp -outfmt {} -query {} -db ~/uniprot_dbs/swissprot \
@@ -135,11 +126,9 @@ def main():
                     ".format('"7 std staxids qseq sseq sscinames scomnames stitle"',
                     fa_file, 0.001, tax_arg, tax_filter, tmpdirname + "/results.txt")     
         subprocess.run(COMMAND, shell=True, env=my_env)
-        # subprocess.run("cp {} {}".format(tmpdirname + "/results", "/Users/brian/JHU_Summer/final_project/test/results"), shell=True, env=my_env)
 
     
         hit_list = []
-        # with open("/Users/brian/JHU_Summer/final_project/test/results") as f:
         with open(tmpdirname + "/results.txt") as f:
             while True:
                 line = f.readline()
@@ -157,12 +146,9 @@ def main():
                     hit_list.append(line)
     
 
-
-
     # https://stackoverflow.com/questions/54102980/convert-a-tab-and-newline-delimited-string-to-pandas-dataframe
     # https://stackoverflow.com/questions/29815129/pandas-dataframe-to-list-of-dictionaries/29816143#29816143
     # https://stackoverflow.com/questions/34584426/nested-for-loop-in-jinja2
-    # df = pd.DataFrame([x.decode("utf-8").split('\t') for x in hit_list], columns=colnames).to_dict('records')
     df = pd.DataFrame([x.split('\t') for x in hit_list], columns=colnames).to_dict('records')
     colnames.remove("subject_sci_names")
     colnames.insert(2,"subject_sci_names")
@@ -173,10 +159,17 @@ def main():
     env = jinja2.Environment(loader=templateLoader)
     template = env.get_template('project.html')
     print("Content-Type: text/html\n\n")
-    if test1:
-        print(test1)
+    # print(template.render(final_df=df,
+    #                       final_cols=colnames,
+    #                       data=fa.format("fasta"),
+    #                       fa_file=fa_file,
+    #                       start=start,
+    #                       end=end))
     print(template.render(final_df=df,
-                          final_cols=colnames))
+                          final_cols=colnames,
+                          data=fa.format("fasta"),
+                          fa_file=fa_file))
+ 
    
    
       

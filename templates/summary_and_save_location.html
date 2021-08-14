@@ -5,6 +5,7 @@
     
         
         <link href="https://cdn.datatables.net/v/dt/dt-1.10.16/sl-1.2.5/datatables.min.css" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="js/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/docs/css/bootstrap-4.5.2.min.css" type="text/css"> -->
         <link href="css/other.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet">
@@ -22,35 +23,54 @@
       <h1 style="padding-left:5px;">Protein blast to drug leads</h1>
         
       <div id="db_container">
-        <form class="form" id='drugbank' name='drugbank' method='post' action=''>  <!-- maybe run from here -->
-            <div class="column1_2">  
-                <div>
-                  <span style="margin-right: 30px;">Name to save master:</span>
-                  <span style="margin-right: 30px;">tar.gz or zip:</span>
-                  <span>directory:</span>
-                </div>
-                <div class="your-class">
-                  <input style="display:block" id="uniprot_id" type="text" name="uniprot_id" placeholder="P00533, EGFR, Epidermal, Q01279">
-                  <span><input class="resi" style="display:block" id="start_resi" type="text" name="start_resi" placeholder="1"></span>
-                  <input class="resi" style="display:block" id="end_resi" type="text" name="end_title">
-                </div>
-                <br>
-                <br>
-                <div>
-                  <input type="submit" value="sdfs">
-                </div>
-            </div>
+        <form class="form" id='final_download' name='final_download' method='post' action=''>  
+          <br>
+          <br>
+
+          <div style="float:left;">
+              <label style="margin-right: 150px; color:yellow">Name to save master:</label>
+              <input style="display:block" id="file_name" type="text" name="uniprot_id" placeholder="my_mass_spec_results">
+          </div>
+
+          <div style="float:left;">
+            <label style="margin-right: 30px; color:yellow">Folder Compression Type:</label>
+            <select id="file_type" name="file_type" style="height:30px">
+              <option value="tar.gz">tar.gz</option>
+              <option value="zip">zip folder</option>
+            </select>
+          </div>
+          <br></br>
+       
+          <div>
+            <button id="Download" type="submit">Download!</button>
+          </div>
+
         </form>
         <div>
-          This is my {{ data }}
+          <a href="../../../tmp/bwiley4/final.tar.gz" download="final.tar.gz">Download</a>
+        </div>
+      </div>
+      
+
+       
+        <!-- <div>
+          This is my rows {{ rows }}
         </div>
         <div>
-          This is my up_ids {{ up_ids }}
+          This is my rows_type {{ rows_type }}
         </div>
+        <div>
+          This is my final_folder {{ final_folder }}
+        </div> -->
+        
 
 
     </body>
     <script type="text/javascript">
-
+      $(document).ready(function() {
+        // $('#Download').click(function(e) {
+        //   e.preventDefault();  //stop the browser from following
+      });
+    
     </script>
 </html>

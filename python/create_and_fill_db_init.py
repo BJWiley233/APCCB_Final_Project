@@ -11,6 +11,8 @@ Created on Wed Aug  4 14:04:13 2021
 # option to select an existing protein id with option start
 # and end residue positions
 # Code from https://github.com/BJWiley233/Practical-Computer-Concepts-Files/blob/master/Database_Project/fill_protein_table_uniprot.py
+
+# UPDATE: Adding table for searches that are performed
 ###############################################################
 
 import create_mysql_db
@@ -32,6 +34,7 @@ password='s3kr1t'
 host='127.0.0.1'
 #db_name = "peptide_to_drugs"
 db_name = "bwiley4"
+
 
 cnx = connect(user, password, host)
 cursor = cnx.cursor()
@@ -57,8 +60,38 @@ TABLES['unprot_fasta'] = (
     ") ENGINE=InnoDB"
 );
 
+## primary key is both query and subject uniprot id
+## as well as start and end residues for both query and subject uniprot id
+TABLES['peptide_searches'] = (
+    "CREATE TABLE IF NOT EXISTS peptide_searches ("
+    "	 Query_accesion_version CHAR(15) NOT NULL,"
+    "    Subject_accession_version CHAR(15) NOT NULL,"
+    "    Subject_Scientific_Names MEDIUMTEXT NOT NULL,"
+    "    Subject_Title LONGTEXT NOT NULL,"
+    "    Percent_identity FLOAT NOT NULL,"
+    "    Alignment_length INT NOT NULL,"
+    "    mismatches INT NOT NULL,"
+    "    gap_opens INT NOT NULL,"
+    "    query_start INT NOT NULL,"
+    "    query_end INT NOT NULL,"
+    "    subject_start INT NOT NULL,"
+    "    subject_end INT NOT NULL,"
+    "    e_value FLOAT NOT NULL,"
+    "    bit_score INT NOT NULL,"
+    "    subject_tax_id INT NOT NULL,"
+    "    Query_seq LONGTEXT NOT NULL,"
+    "    Subject_seq LONGTEXT NOT NULL,"
+    "    Subject_common_name VARCHAR(200) NOT NULL,"    
+    "    drugbank_ids JSON DEFAULT NULL,"
+    "    PRIMARY KEY(Query_accesion_version, Subject_accession_version,"
+    "      query_start,query_end,subject_start,subject_end)"
+    ") ENGINE=InnoDB"
+);
 
-# for table in TABLES:
+## drop previous tables
+#TABLES = ["genes", "organisms"]
+
+#for table in TABLES:
 #     drop_table(cursor, db_name, table)
 
 
