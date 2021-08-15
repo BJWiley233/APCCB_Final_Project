@@ -11,3 +11,5 @@ Even if you add spaces they will be trimmed.  This also overrides the [multisele
 <b>Search Option 1:<b>
 Option one of the left side of [search.html](https://github.com/BJWiley233/APCCB_Final_Project/blob/main/search.html)
 * Using this option you can
+
+<b>Search Option 2:<b>
