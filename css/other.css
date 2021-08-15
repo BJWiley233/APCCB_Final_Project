@@ -160,3 +160,6 @@ div[id^=ui-id-]:hover {
       height: 25px;
       width: 25px
 }
+label.form-check-label {
+    text-shadow:none !important;
+}
