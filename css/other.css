@@ -1,13 +1,8 @@
 .container#dt_container {
     float:left !important;
     padding-left: 15px;
-    width: 90% !important;
+    width: 100%;
 } 
-/* table#my_datatable {
-    border: 1px solid #211a1a !important;
-    margin-left:35px;
-    width: 100%
-} */
 table#example {
     border-left: 1px solid #211a1a !important;
 }
@@ -25,9 +20,6 @@ table#example .table-bordered th {
     border-left: 1px solid #fff !important;
     border-right: 1px solid #fff !important;
 }
-/* table#my_summarytable {
-    width:800px !important;
-} */
 .dataTables_wrapper #my_datatable_filter.dataTables_filter input {
     color: #757c82 !important;
 }
@@ -92,7 +84,6 @@ table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.s
 table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
     background-color: #878bc5;
 }
-
 button.multiselect-group.dropdown-item span.form-check label.form-check-label {
     font-weight: bold !important
 }
@@ -112,7 +103,6 @@ button.multiselect-group.dropdown-item.active span.form-check label.form-check-l
     color: white !important;
 }
 input[type="radio"], input[type="checkbox"] {
-    /* margin:4px 0 0; */
     margin: 4px -20px !important;
     margin-top:1px \9;
     line-height:normal;
@@ -148,7 +138,6 @@ label#accession {
     overflow-x: hidden;
     /* add padding to account for vertical scrollbar */
     padding-right: 20px;
-
 } 
 div[id^=ui-id-]:hover {
     background:rgb(194, 128, 159);
@@ -159,3 +148,15 @@ div[id^=ui-id-]:hover {
     color: #ffffff !important;
     border: none;
 } 
+#target{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    left: 35%;
+    top: 35%;
+    z-index: 9999;
+  }
+#target.lv-circles.lg div:before {
+      height: 25px;
+      width: 25px
+}

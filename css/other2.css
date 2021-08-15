@@ -5,6 +5,7 @@ table.dataTable tr th.select-checkbox.selected::after {
     text-align: center;
     text-shadow: rgb(176, 190, 217) 1px 1px, rgb(176, 190, 217) -1px -1px, rgb(176, 190, 217) 1px -1px, rgb(176, 190, 217) -1px 1px;
 }
+/* This is to make the checkbox invisible of the cloned header for column filter */
 #example_wrapper  div.dataTables_scroll  div.dataTables_scrollHead  div  table  thead  tr:nth-child(2)  th.dt-checkboxes-select-all.sorting_disabled  input[type=checkbox] {
     visibility: hidden;
 }

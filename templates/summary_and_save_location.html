@@ -1,23 +1,16 @@
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
-        <title>Project</title>
+        <title>Save tar</title>
     
         
         <link href="https://cdn.datatables.net/v/dt/dt-1.10.16/sl-1.2.5/datatables.min.css" rel="stylesheet">
-        <!-- <link rel="stylesheet" href="js/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/docs/css/bootstrap-4.5.2.min.css" type="text/css"> -->
         <link href="css/other.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet">
-     
-    
         <script src="http://cdn.datatables.net/1.10.25/js/jquery.js" type="text/javascript"></script>
-        <script type="text/javascript" src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.9/js/dataTables.fixedHeader.min.js"></script>
-        <script type="text/javascript" src="http://cdn.datatables.net/plug-ins/1.10.25/dataRender/ellipsis.js"></script>
-        
- 
-        
+
+  
     </head>
     <body>
       <h1 style="padding-left:5px;">Protein blast to drug leads</h1>
@@ -26,51 +19,62 @@
         <form class="form" id='final_download' name='final_download' method='post' action=''>  
           <br>
           <br>
-
-          <div style="float:left;">
-              <label style="margin-right: 150px; color:yellow">Name to save master:</label>
-              <input style="display:block" id="file_name" type="text" name="uniprot_id" placeholder="my_mass_spec_results">
+          <div >
+              <label style="color:yellow">Name to save master:</label>
+              <input style="display:block; width: 250px;" id="file_name" type="text" name="file_name" placeholder="my_mass_spec_results.tar.gz">
           </div>
-
-          <div style="float:left;">
-            <label style="margin-right: 30px; color:yellow">Folder Compression Type:</label>
-            <select id="file_type" name="file_type" style="height:30px">
-              <option value="tar.gz">tar.gz</option>
-              <option value="zip">zip folder</option>
-            </select>
-          </div>
-          <br></br>
-       
+          <br>
           <div>
-            <button id="Download" type="submit">Download!</button>
+            <input id="download" type="submit" value="Download">
           </div>
-
+          
         </form>
+        <br></br>
+        <br></br>
         <div>
-          <a href="../../../tmp/bwiley4/final.tar.gz" download="final.tar.gz">Download</a>
+          <!-- <h4 style="padding-left:5px; color: yellow;">Summary</h4> -->
+          <div>
+            <!-- Need to be able tp pass summary_json from drugbank_sdfs.cgi to download.cgi -->
+            {{ summary }}
+          </div>
         </div>
       </div>
       
-
-       
-        <!-- <div>
-          This is my rows {{ rows }}
-        </div>
-        <div>
-          This is my rows_type {{ rows_type }}
-        </div>
-        <div>
-          This is my final_folder {{ final_folder }}
-        </div> -->
-        
-
-
     </body>
     <script type="text/javascript">
       $(document).ready(function() {
-        // $('#Download').click(function(e) {
-        //   e.preventDefault();  //stop the browser from following
+        $('#final_download').submit(function (event) {
+          if ($('#file_name').val().length < 1) {
+            var value = "final.tar.gz"
+            console.log("true")
+          } else {
+            var value = $('#file_name').val()
+          }
+          // Check for REALLY wrong file names such as this/ismy.really.crummy.path/today.blah
+          // # get "basename"
+          value = value.split("/")[value.split("/").length-1]
+          if (value.endsWith("tar.gz")) {
+            //do dothing
+          } else {
+            value = value.split(".")[0].concat(".tar.gz")
+          }
+           
+          event.preventDefault();
+          $.ajax({
+              type: "POST",
+              // for BFX3 server
+              url: 'create_tar.cgi',
+              datatype: "json",
+              data: {path: value},
+              success: function (response) {
+                  console.log(response);
+                  window.location.href = value;
+              },
+              error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+              }
+            })
+        });
       });
-    
     </script>
 </html>

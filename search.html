@@ -3,12 +3,6 @@
         <meta charset="utf-8">
         <title>Project</title>
         
-        <!-- <script src="js/jQuery/dist/jquery.min.js"></script> -->
-        <!-- <script src="js/datatables/media/js/jquery.dataTables.min.js"></script> -->
-        
-        <!-- <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet"> -->
-        
-        
         <link rel="stylesheet" href="js/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/docs/css/bootstrap-4.5.2.min.css" type="text/css">
         <link rel="stylesheet" href="js/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/docs/css/bootstrap-example.min.css" type="text/css">
         <link rel="stylesheet" href="js/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/docs/css/prettify.min.css" type="text/css">
@@ -25,14 +19,15 @@
         <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
         <link href="css/other.css" type="text/css" rel="stylesheet">
         <link href="css/project_search.css" type="text/css" rel="stylesheet">
-        
  
         
     </head>
     <body>
       <h1 style="padding-left:5px;">Protein blast to drug leads</h1>
         
-        <form class="form" id='blast_seq' name='blast_seq' method='post' action='http://localhost/cgi-bin/project.cgi'>
+        <form class="form" id='blast_seq' name='blast_seq' method='post' action='http://localhost/cgi-bin/project_blast.cgi'>
+        <!-- for BFX3 server -->
+        <!-- <form class="form" id='blast_seq' name='blast_seq' method='post' action='project_blast.cgi'>  -->
           <div class="wrapper">
             <!-- column is first number for grid class and row is second -->
             <div class="column1_1"> 
@@ -79,13 +74,13 @@
             <div class="column1_2">
               <div id="search_container">
                 <label class="control-label" id="peptide_entry" for="peptide_entry">Enter peptide sequence in fasta format (>):</label>
-                <textarea rows="15" cols="60" id="fasta_entered" type="text" name="fasta_entered" target = "_blank"></textarea>
+                <textarea rows="15" cols="60" id="fasta_entered" type="text" name="fasta_entered" target = "_blank" placeholder=">sp|P80162|CXCL6_HUMAN C-X-C motif chemokine 6 OS=Homo sapiens OX=9606 GN=CXCL6 PE=1 SV=4 MSLPSSRAARVPGPSGSLCALLALLLLLTPPGPLASAGPVSAVLTELRCTCLRVTLRVNPKTIGKLQVFPAGPQCSKVEVVASLKNGKQVCLDPEAPFLKKVIQKILDSGNKKN"></textarea>
                 <div>
                   <br>
                   <label class="control-label" id="title" for="title">Enter a Job Title/Name for fasta:</label>
-                  <input id="job_title" type="text" name="job_title">  
+                  <input id="job_title" type="text" name="job_title" placeholder="name_without_fasta_ext">  
                 </div>
-                <input type="submit" value="Blast">
+                <input id="blast1" type="submit" value="Blast">
               </div>
             </div>
 
@@ -103,7 +98,7 @@
                 <br>
                 <br>
                 <div>
-                  <input type="submit" value="Blast">
+                  <input id="blast2" type="submit" value="Blast">
                 </div>
             </div>
 
@@ -126,6 +121,43 @@
           enableClickableOptGroups: true,
           maxHeight: 450 
         });
+        // let's do at least some error input checking
+        // https://www.biostars.org/p/47203/
+        $('#blast1').on("click",function() {
+          if ($("#end_resi").val().length > 0) {
+            alert("You might have accidently inserted an end value for UniProt search?\n You can probably ignore the next warning if submitting your own sequence.")
+            if (($("#end_resi").val() - $("#start_resi").val() + 1) <= 30) {
+              // https://blast.ncbi.nlm.nih.gov/Blast.cgi
+              alert("Warning: Your search parameters were adjusted to search for a short input sequence.\n You may get an error or page crash if your sequence is <= 10 residues long.")
+            }
+          }
+          if ($("#fasta_entered").val().length > 0) {
+            var firstChar = $('#fasta_entered').val().substr(0, 1);
+            if (firstChar !== ">") {
+              alert("Invalid fasta entry.  Must start with a '>'")
+              // https://stackoverflow.com/questions/8664486/javascript-code-to-stop-form-submission
+              // returnToPreviousPage();
+              return false;
+            }
+            // make sure entered a sequence past the fasta header
+            // https://www.webmasterworld.com/forum91/1851.htm
+            var text = $("#fasta_entered").val().replace(/\s+$/g,"")
+            var split = text.split("\n")
+            if (split.length <= 1) {
+              alert("You only added a fasta header but no sequence.  Please enter a sequence")
+              return false;
+            }
+            return true;
+          }
+        }); 
+
+        $('#blast2').on("click",function() {
+          if ($("#end_resi").val().length > 0) {
+            if (($("#end_resi").val() - $("#start_resi").val() + 1) <= 30) {
+              alert("Warning: Your search parameters were adjusted to search for a short input sequence.\n You may get an error or page crash if your sequence is <= 10 residues long")
+            }
+          }
+        }); 
 
         $("#uniprot_id").autocomplete({
           source: function(request, response){
@@ -133,6 +165,8 @@
               $.ajax({
                 type: "get",
                 url: 'http://localhost/cgi-bin/autocomplete_project.cgi',
+                // for BFX3 server
+                // url: 'autocomplete_project.cgi',
                 dataType: 'json',
                 data: frmStr,
                 success: function(data){
@@ -152,9 +186,7 @@
                 });
             }
         });
-
-        
-
       }); 
+
     </script>
 </html>

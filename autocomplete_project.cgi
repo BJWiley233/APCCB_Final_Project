@@ -13,7 +13,7 @@ def main():
     cursor = conn.cursor()
     
     qry = """
-          SELECT uniprot_id, gene_name, protein_name 
+          SELECT uniprot_id, gene_name, protein_name, organism_scientific
           FROM bwiley4.unprot_fasta 
           WHERE uniprot_id LIKE %s or gene_name LIKE %s or protein_name LIKE %s
           LIMIT 20; 
@@ -23,7 +23,7 @@ def main():
     results = []
     for (product) in cursor:
         # results.append({'label': product[0],'value': product[0]})
-        results.append({'label': "{} : {} : {}".format(product[0], product[1], product[2]),
+        results.append({'label': "{} : {} ({}) : {}".format(product[0], product[1], product[3], product[2]),
                         'value': product[0]})
 
     conn.close()
