@@ -1,4 +1,4 @@
-* About *
+### About
 This is my project for which there are two options to run blastp 
 in on the SwissProt/UniProt Database.  From there the user will be
 able to select hits of protein accession IDs to submit for obtaining
@@ -9,12 +9,14 @@ proteins selected
 Source code can be obtained from here:
 https://github.com/BJWiley233/APCCB_Final_Project/releases/tag/0.0.1
 
-* Requirements *
+
+### Requirements
 For the autocomplete functionality for UniProt protein search option
 you must create the MySQL database and load the `unprot_fasta` table with 
 all entries from the fasta file.  The [Reviewed (Swiss-Prot)](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz) fasta download is also required for this step.
 
-* DETAILED USAGE *
+
+### DETAILED USAGE
 For both options you can filter by organism using the drop drop for the main
 model organisms as well as enter a comma separated list of taxids such as:
 ```sh
