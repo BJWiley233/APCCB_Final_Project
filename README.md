@@ -1,4 +1,4 @@
-### About
+## About
 This is my project for which there are two options to run [blastp](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE=Proteins)
 in on the SwissProt/UniProt Database.  From there the user will be
 able to select hits of protein accession IDs to submit for obtaining
@@ -8,7 +8,7 @@ proteins selected
 #### Source code can be obtained from [here](https://github.com/BJWiley233/APCCB_Final_Project/releases/tag/0.0.1):
 <br>
 
-### Requirements
+## Requirements
 * For the autocomplete functionality for UniProt protein search option
 you must create the MySQL database and load the `unprot_fasta` table with 
 all entries from the fasta file.  
@@ -22,7 +22,7 @@ makeblastdb -in uniprot_sprot.fasta -title swissprot -out uniprot_dbs/swissprot 
 * The taxonmy archive file must be untarred in the same directory
 <br>
 
-### Detailed Usage
+## Detailed Usage
 For both options you can filter by organism using the drop drop for the main
 model organisms as well as enter a comma separated list of taxids such as:
 ```sh
