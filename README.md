@@ -1,13 +1,13 @@
 ### About
-This is my project for which there are two options to run blastp 
+This is my project for which there are two options to run [blastp] 
 in on the SwissProt/UniProt Database.  From there the user will be
 able to select hits of protein accession IDs to submit for obtaining
 all the [SDF](https://en.wikipedia.org/wiki/Chemical_table_file#SDF) files
 of [DrugBank]https://go.drugbank.com/) drugs associated with those
 proteins selected
 
-Source code can be obtained from here:
-https://github.com/BJWiley233/APCCB_Final_Project/releases/tag/0.0.1
+#### Source code can be obtained from [here](https://github.com/BJWiley233/APCCB_Final_Project/releases/tag/0.0.1):
+
 <br>
 
 ### Requirements
@@ -31,11 +31,15 @@ Option 1 the left side of [search.html](https://github.com/BJWiley233/APCCB_Fina
 <br>
 
 **Search Option 2:**
+<br>
 Option 2 on the right side allows you to also enter a UniProtID like in NCBI except that NCBI does this in the same input.  This was easier to separate.  You can start typing in the `Enter a UniProt(SwissProt) ID:` input and there will be an autocomplete search while you type that contains a description of all 565,254 UniProt entries from their [Reviewed (Swiss-Prot)](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz) fasta download.  The description is in the format:
 ```sh
 uniprot_id : gene_name (organism_scientific) : protein_name
 ```
+You can also select a start and end residue for your search like on the NCBI blastp interface.
 
+**Blastp Submission**
+After click the blast button there will be a slight delay while the blastp
 
 
 
