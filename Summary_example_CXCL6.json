@@ -1,0 +1,743 @@
+{
+    "Fetch_Summary": {
+        "Number good Uniprot fetches": 66,
+        "Number bad Uniprot fetches": 0,
+        "Number good DrugBank fetches": 6,
+        "Number bad DrugBank fetches": 5
+    },
+    "UniProt_DrugBankIDs": {
+        "P80162.4": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P80162"
+            }
+        },
+        "P42830.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P42830"
+            }
+        },
+        "P22952.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P22952"
+            }
+        },
+        "Q8MIN2.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q8MIN2"
+            }
+        },
+        "P80221.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P80221"
+            }
+        },
+        "P50228.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P50228"
+            }
+        },
+        "P82535.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P82535"
+            }
+        },
+        "P97885.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P97885"
+            }
+        },
+        "P10889.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P10889"
+            }
+        },
+        "P43030.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P43030"
+            }
+        },
+        "P09340.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P09340"
+            }
+        },
+        "P12850.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P12850"
+            }
+        },
+        "P14095.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P14095"
+            }
+        },
+        "P30348.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P30348"
+            }
+        },
+        "P02775.3": {
+            "Drugs": [
+                {
+                    "DrugBank ID": "DB09130",
+                    "Generic Name": "Copper"
+                },
+                {
+                    "DrugBank ID": "DB03635",
+                    "Generic Name": "Ethanesulfonic acid"
+                }
+            ],
+            "Drug_Fetches": {
+                "Fetch_Succeeded": [
+                    {
+                        "DrugBank ID": "DB09130",
+                        "Generic Name": "Copper"
+                    },
+                    {
+                        "DrugBank ID": "DB03635",
+                        "Generic Name": "Ethanesulfonic acid"
+                    }
+                ],
+                "Fetch_Failed": []
+            }
+        },
+        "Q10746.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q10746"
+            }
+        },
+        "P09341.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P09341"
+            }
+        },
+        "Q6W5C0.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q6W5C0"
+            }
+        },
+        "P19876.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P19876"
+            }
+        },
+        "O55235.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for O55235"
+            }
+        },
+        "P30782.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P30782"
+            }
+        },
+        "Q9XSX5.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q9XSX5"
+            }
+        },
+        "P02776.2": {
+            "Drugs": [
+                {
+                    "DrugBank ID": "DB00055",
+                    "Generic Name": "Drotrecogin alfa"
+                },
+                {
+                    "DrugBank ID": "DB01109",
+                    "Generic Name": "Heparin"
+                }
+            ],
+            "Drug_Fetches": {
+                "Fetch_Succeeded": [],
+                "Fetch_Failed": [
+                    {
+                        "DrugBank ID": "DB00055",
+                        "Generic Name": "Drotrecogin alfa"
+                    },
+                    {
+                        "DrugBank ID": "DB01109",
+                        "Generic Name": "Heparin"
+                    }
+                ]
+            }
+        },
+        "P19875.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P19875"
+            }
+        },
+        "O46678.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for O46678"
+            }
+        },
+        "P41324.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P41324"
+            }
+        },
+        "O46677.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for O46677"
+            }
+        },
+        "O46676.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for O46676"
+            }
+        },
+        "P47854.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P47854"
+            }
+        },
+        "O46675.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for O46675"
+            }
+        },
+        "P36925.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P36925"
+            }
+        },
+        "P26894.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P26894"
+            }
+        },
+        "O62812.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for O62812"
+            }
+        },
+        "P08317.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P08317"
+            }
+        },
+        "P10720.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P10720"
+            }
+        },
+        "Q7YRB5.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q7YRB5"
+            }
+        },
+        "P67813.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P67813"
+            }
+        },
+        "P19874.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P19874"
+            }
+        },
+        "P46653.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P46653"
+            }
+        },
+        "Q9Z126.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q9Z126"
+            }
+        },
+        "P06765.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P06765"
+            }
+        },
+        "P30035.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P30035"
+            }
+        },
+        "P49113.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P49113"
+            }
+        },
+        "P10145.1": {
+            "Drugs": [
+                {
+                    "DrugBank ID": "DB05434",
+                    "Generic Name": "ABT-510"
+                },
+                {
+                    "DrugBank ID": "DB05484",
+                    "Generic Name": "MDX-018"
+                },
+                {
+                    "DrugBank ID": "DB05855",
+                    "Generic Name": "Rivanicline"
+                },
+                {
+                    "DrugBank ID": "DB06083",
+                    "Generic Name": "Tapinarof"
+                }
+            ],
+            "Drug_Fetches": {
+                "Fetch_Succeeded": [
+                    {
+                        "DrugBank ID": "DB05434",
+                        "Generic Name": "ABT-510"
+                    },
+                    {
+                        "DrugBank ID": "DB05855",
+                        "Generic Name": "Rivanicline"
+                    },
+                    {
+                        "DrugBank ID": "DB06083",
+                        "Generic Name": "Tapinarof"
+                    }
+                ],
+                "Fetch_Failed": [
+                    {
+                        "DrugBank ID": "DB05484",
+                        "Generic Name": "MDX-018"
+                    }
+                ]
+            }
+        },
+        "Q102R3.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q102R3"
+            }
+        },
+        "A0A0R4INB9.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for A0A0R4INB9"
+            }
+        },
+        "Q2KIQ8.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q2KIQ8"
+            }
+        },
+        "P18340.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P18340"
+            }
+        },
+        "P79255.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P79255"
+            }
+        },
+        "P30034.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P30034"
+            }
+        },
+        "A9QWP9.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for A9QWP9"
+            }
+        },
+        "Q5KSV9.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q5KSV9"
+            }
+        },
+        "P02778.2": {
+            "Drugs": [
+                {
+                    "DrugBank ID": "DB11338",
+                    "Generic Name": "Clove oil"
+                },
+                {
+                    "DrugBank ID": "DB06116",
+                    "Generic Name": "Eldelumab"
+                },
+                {
+                    "DrugBank ID": "DB04487",
+                    "Generic Name": "N-Methylleucine"
+                }
+            ],
+            "Drug_Fetches": {
+                "Fetch_Succeeded": [
+                    {
+                        "DrugBank ID": "DB04487",
+                        "Generic Name": "N-Methylleucine"
+                    }
+                ],
+                "Fetch_Failed": [
+                    {
+                        "DrugBank ID": "DB11338",
+                        "Generic Name": "Clove oil"
+                    },
+                    {
+                        "DrugBank ID": "DB06116",
+                        "Generic Name": "Eldelumab"
+                    }
+                ]
+            }
+        },
+        "Q77MQ6.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q77MQ6"
+            }
+        },
+        "P48973.2": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P48973"
+            }
+        },
+        "P02777.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P02777"
+            }
+        },
+        "Q865F5.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q865F5"
+            }
+        },
+        "B0R191.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for B0R191"
+            }
+        },
+        "Q07325.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q07325"
+            }
+        },
+        "Q8MIZ1.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q8MIZ1"
+            }
+        },
+        "P17515.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for P17515"
+            }
+        },
+        "Q8UUJ9.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q8UUJ9"
+            }
+        },
+        "O43927.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for O43927"
+            }
+        },
+        "Q9WVL7.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q9WVL7"
+            }
+        },
+        "Q5EBF6.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for Q5EBF6"
+            }
+        },
+        "O55038.1": {
+            "Drugs": [],
+            "Drug_Fetches": {
+                "Fetch_Failed": "No DrugBank IDs for O55038"
+            }
+        }
+    },
+    "All_Uniprot_IDs": [
+        "P80162.4",
+        "P42830.1",
+        "P22952.2",
+        "Q8MIN2.1",
+        "P80221.2",
+        "P50228.2",
+        "P82535.1",
+        "P97885.1",
+        "P10889.2",
+        "P43030.1",
+        "P09340.1",
+        "P12850.1",
+        "P14095.2",
+        "P30348.1",
+        "P02775.3",
+        "Q10746.2",
+        "P09341.1",
+        "Q6W5C0.1",
+        "P19876.1",
+        "O55235.1",
+        "P30782.2",
+        "Q9XSX5.1",
+        "P02776.2",
+        "P19875.1",
+        "O46678.1",
+        "P41324.1",
+        "O46677.1",
+        "O46676.1",
+        "P47854.1",
+        "O46675.1",
+        "P36925.1",
+        "P26894.1",
+        "O62812.2",
+        "P08317.1",
+        "P10720.1",
+        "Q7YRB5.1",
+        "P67813.1",
+        "P19874.2",
+        "P46653.1",
+        "Q9Z126.1",
+        "P06765.1",
+        "P30035.1",
+        "P49113.1",
+        "P10145.1",
+        "Q102R3.1",
+        "A0A0R4INB9.1",
+        "Q2KIQ8.1",
+        "P18340.2",
+        "P79255.1",
+        "P30034.2",
+        "A9QWP9.1",
+        "Q5KSV9.1",
+        "P02778.2",
+        "Q77MQ6.1",
+        "P48973.2",
+        "P02777.1",
+        "Q865F5.1",
+        "B0R191.1",
+        "Q07325.1",
+        "Q8MIZ1.1",
+        "P17515.1",
+        "Q8UUJ9.1",
+        "O43927.1",
+        "Q9WVL7.1",
+        "Q5EBF6.1",
+        "O55038.1"
+    ],
+    "All_DrugBank_IDs": [
+        {
+            "DrugBank ID": "DB09130",
+            "Generic Name": "Copper"
+        },
+        {
+            "DrugBank ID": "DB03635",
+            "Generic Name": "Ethanesulfonic acid"
+        },
+        {
+            "DrugBank ID": "DB00055",
+            "Generic Name": "Drotrecogin alfa"
+        },
+        {
+            "DrugBank ID": "DB01109",
+            "Generic Name": "Heparin"
+        },
+        {
+            "DrugBank ID": "DB05434",
+            "Generic Name": "ABT-510"
+        },
+        {
+            "DrugBank ID": "DB05484",
+            "Generic Name": "MDX-018"
+        },
+        {
+            "DrugBank ID": "DB05855",
+            "Generic Name": "Rivanicline"
+        },
+        {
+            "DrugBank ID": "DB06083",
+            "Generic Name": "Tapinarof"
+        },
+        {
+            "DrugBank ID": "DB11338",
+            "Generic Name": "Clove oil"
+        },
+        {
+            "DrugBank ID": "DB06116",
+            "Generic Name": "Eldelumab"
+        },
+        {
+            "DrugBank ID": "DB04487",
+            "Generic Name": "N-Methylleucine"
+        }
+    ],
+    "All UniProt_Fetches": {
+        "Fetch_Succeeded": [
+            "P80162",
+            "P42830",
+            "P22952",
+            "Q8MIN2",
+            "P80221",
+            "P50228",
+            "P82535",
+            "P97885",
+            "P10889",
+            "P43030",
+            "P09340",
+            "P12850",
+            "P14095",
+            "P30348",
+            "P02775",
+            "Q10746",
+            "P09341",
+            "Q6W5C0",
+            "P19876",
+            "O55235",
+            "P30782",
+            "Q9XSX5",
+            "P02776",
+            "P19875",
+            "O46678",
+            "P41324",
+            "O46677",
+            "O46676",
+            "P47854",
+            "O46675",
+            "P36925",
+            "P26894",
+            "O62812",
+            "P08317",
+            "P10720",
+            "Q7YRB5",
+            "P67813",
+            "P19874",
+            "P46653",
+            "Q9Z126",
+            "P06765",
+            "P30035",
+            "P49113",
+            "P10145",
+            "Q102R3",
+            "A0A0R4INB9",
+            "Q2KIQ8",
+            "P18340",
+            "P79255",
+            "P30034",
+            "A9QWP9",
+            "Q5KSV9",
+            "P02778",
+            "Q77MQ6",
+            "P48973",
+            "P02777",
+            "Q865F5",
+            "B0R191",
+            "Q07325",
+            "Q8MIZ1",
+            "P17515",
+            "Q8UUJ9",
+            "O43927",
+            "Q9WVL7",
+            "Q5EBF6",
+            "O55038"
+        ],
+        "Fetch_Failed": []
+    },
+    "All DrugBank_Fetches": {
+        "Fetch_Succeeded": [
+            {
+                "DrugBank ID": "DB09130",
+                "Generic Name": "Copper"
+            },
+            {
+                "DrugBank ID": "DB03635",
+                "Generic Name": "Ethanesulfonic acid"
+            },
+            {
+                "DrugBank ID": "DB05434",
+                "Generic Name": "ABT-510"
+            },
+            {
+                "DrugBank ID": "DB05855",
+                "Generic Name": "Rivanicline"
+            },
+            {
+                "DrugBank ID": "DB06083",
+                "Generic Name": "Tapinarof"
+            },
+            {
+                "DrugBank ID": "DB04487",
+                "Generic Name": "N-Methylleucine"
+            }
+        ],
+        "Fetch_Failed": [
+            {
+                "DrugBank ID": "DB00055",
+                "Generic Name": "Drotrecogin alfa"
+            },
+            {
+                "DrugBank ID": "DB01109",
+                "Generic Name": "Heparin"
+            },
+            {
+                "DrugBank ID": "DB05484",
+                "Generic Name": "MDX-018"
+            },
+            {
+                "DrugBank ID": "DB11338",
+                "Generic Name": "Clove oil"
+            },
+            {
+                "DrugBank ID": "DB06116",
+                "Generic Name": "Eldelumab"
+            }
+        ]
+    }
+}

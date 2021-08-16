@@ -68,7 +68,7 @@
               data: {path: value},
               success: function (response) {
                   console.log(response);
-                  window.location.href = value;
+                  window.location.href = "tmp/".concat(value);
               },
               error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("Status: " + textStatus); alert("Error: " + errorThrown); 

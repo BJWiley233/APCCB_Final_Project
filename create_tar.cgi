@@ -22,7 +22,7 @@ def main():
  
     data = cgi.FieldStorage()
     path = data['path'].value
-    make_tarfile(path, "/export/home/bwiley4/tmp/final")
+    make_tarfile("tmp/"+path, "/export/home/bwiley4/tmp/final")
 
         
     ## Error checking at console
