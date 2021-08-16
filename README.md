@@ -57,7 +57,9 @@ Click the `Get Drug Bank .sdf files` button after you have selected all your hit
 
 **Results saving**
 <br>
-After the fetches have been completed you will be brought to a page which will allow you to input a name for the tar file.  You can include the `tar.gz` suffix or it will automatically be added. Bad file name correction is also provided for instance you include an folder delimeters `/` then the basename will be correctly modified.
+After the fetches have been completed you will be brought to a page which will allow you to input a name for the tar file.  You can include the `tar.gz` suffix or it will automatically be added. Bad file name correction is also provided for instance you include an folder delimeters `/` then the basename will be correctly modified.  
+
+The results are then stored for all the accession submitted to the MySQL database in the table 
 <br>
 <br>
 

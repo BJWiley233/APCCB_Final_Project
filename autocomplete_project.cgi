@@ -16,7 +16,7 @@ def main():
           SELECT uniprot_id, gene_name, protein_name, organism_scientific
           FROM bwiley4.unprot_fasta 
           WHERE uniprot_id LIKE %s or gene_name LIKE %s or protein_name LIKE %s
-          LIMIT 20; 
+          LIMIT 100; 
     """
     cursor.execute(qry, ('%'+uniprot_search+'%', '%'+uniprot_search+'%', '%'+uniprot_search+'%'))
 

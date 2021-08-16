@@ -22,6 +22,8 @@ def main():
  
     data = cgi.FieldStorage()
     path = data['path'].value
+    ## add "tmp/" so the tars will be in a tmp folder relative to APCCB_Final_Project folder
+    ## and not cluttering up the project folder
     make_tarfile("tmp/"+path, "/export/home/bwiley4/tmp/final")
 
         
