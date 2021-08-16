@@ -9,9 +9,17 @@ proteins selected
 
 
 ### Requirements
-For the autocomplete functionality for UniProt protein search option
+* For the autocomplete functionality for UniProt protein search option
 you must create the MySQL database and load the `unprot_fasta` table with 
-all entries from the fasta file.  The [Reviewed (Swiss-Prot)](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz) fasta download is also required for this step.
+all entries from the fasta file.  
+* The [Reviewed (Swiss-Prot)](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz) fasta download is also required for this step.
+* Download of the [taxonomy database] for utilizing the organism tax search functionality
+* Both SwissProt and Tax database should be located in a folder on the home directory named `uniprot_dbs/`
+* You must create the local SwissProt database with the code:
+```sh
+makeblastdb -in uniprot_sprot.fasta -title swissprot -out uniprot_dbs/swissprot -dbtype prot
+```
+* The taxonmy archive file must be untarred in the same directory
 <br>
 
 ### Detailed Usage
@@ -37,7 +45,16 @@ uniprot_id : gene_name (organism_scientific) : protein_name
 You can also select a start and end residue for your search like on the NCBI blastp interface.
 
 **Blastp Submission**
-After click the blast button there will be a slight delay while the blastp
+After click the blast button there will be a slight delay while the blastp program
+is running.  This is expedited by having a local database.
+
+On the blast results page you will see a table of the results.  The entire table is filterable as well as each column.  Normally you may be interested in filter for the species.  To obtain the SDF files associated with each hit check the box of the line for that hit.  You may select the check all box as well filter by a column and the select all will be maintained for that filter.
+
+**DrugBank SDF fetches**
+Click the `Get Drug Bank .sdf files` button after you have selected all your hits.  Upon select 10 or more lines you will be warned this can take a while.  After clicking fetch button there will be a loading wheel that appears until all the protein Accessions and DrugBank drug fetches have been completed and SDF files are ready to download.
+
+**Results saving**
+After the fetches have been completed you will be brought to a page that will allow you to input a name for the
 
 
 
@@ -58,3 +75,6 @@ After click the blast button there will be a slight delay while the blastp
 1. [Files](https://github.com/BJWiley233/APCCB_Final_Project/tree/main/python) for creating database and tables and loading autocomplete table.
 
 #### [Javascript](https://github.com/BJWiley233/APCCB_Final_Project/tree/main/js), [CSS](https://github.com/BJWiley233/APCCB_Final_Project/tree/main/css), and [img](https://github.com/BJWiley233/APCCB_Final_Project/tree/main/img)
+
+#### Path to final project directory on the BFX3 server with the start `search.html` page:
+`/var/www/html/bwiley4/APCCB_Final_Project`
