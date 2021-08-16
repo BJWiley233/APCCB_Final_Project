@@ -45,15 +45,18 @@ uniprot_id : gene_name (organism_scientific) : protein_name
 You can also select a start and end residue for your search like on the NCBI blastp interface.
 
 **Blastp Submission**
+<br>
 After click the blast button there will be a slight delay while the blastp program
 is running.  This is expedited by having a local database.
 
 On the blast results page you will see a table of the results.  The entire table is filterable as well as each column.  Normally you may be interested in filter for the species.  To obtain the SDF files associated with each hit check the box of the line for that hit.  You may select the check all box as well filter by a column and the select all will be maintained for that filter.
 
 **DrugBank SDF fetches**
+<br>
 Click the `Get Drug Bank .sdf files` button after you have selected all your hits.  Upon select 10 or more lines you will be warned this can take a while.  After clicking fetch button there will be a loading wheel that appears until all the protein Accessions and DrugBank drug fetches have been completed and SDF files are ready to download.
 
 **Results saving**
+<br>
 After the fetches have been completed you will be brought to a page which will allow you to input a name for the tar file.  You can include the `tar.gz` suffix or it will automatically be added. Bad file name correction is also provided for instance you include an folder delimeters `/` then the basename will be correctly modified.
 
 
