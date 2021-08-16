@@ -54,7 +54,7 @@ On the blast results page you will see a table of the results.  The entire table
 Click the `Get Drug Bank .sdf files` button after you have selected all your hits.  Upon select 10 or more lines you will be warned this can take a while.  After clicking fetch button there will be a loading wheel that appears until all the protein Accessions and DrugBank drug fetches have been completed and SDF files are ready to download.
 
 **Results saving**
-After the fetches have been completed you will be brought to a page that will allow you to input a name for the
+After the fetches have been completed you will be brought to a page which will allow you to input a name for the tar file.  You can include the `tar.gz` suffix or it will automatically be added. Bad file name correction is also provided for instance you include an folder delimeters `/` then the basename will be correctly modified.
 
 
 
