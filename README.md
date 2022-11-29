@@ -3,7 +3,7 @@ This is my project for which there are two options to run [blastp](https://blast
 in on the SwissProt/UniProt Database.  From there the user will be
 able to select hits of protein accession IDs to submit for obtaining
 all the [SDF](https://en.wikipedia.org/wiki/Chemical_table_file#SDF) files
-of [DrugBank]https://go.drugbank.com/) drugs associated with those
+of [DrugBank](https://go.drugbank.com/) drugs associated with those
 proteins selected
 #### Source code can be obtained from [here](https://github.com/BJWiley233/APCCB_Final_Project/releases/tag/0.0.1):
 <br>
